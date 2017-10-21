@@ -69,36 +69,11 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">
                 <!-- BEGIN CONTENT BODY -->
-                <!-- BEGIN PAGE HEAD-->
-                <div class="page-head">
-                    <div class="container">
-                        <!-- BEGIN PAGE TITLE -->
-                        <div class="page-title">
-                            <h1>Home
-                                <small>Vendor Dashboard</small>
-                            </h1>
-                        </div>
-                        <!-- END PAGE TITLE -->
-                        <!-- BEGIN PAGE TOOLBAR -->
-                        @include('layouts2.offerAppPageToolbar')
-                        <!-- END PAGE TOOLBAR -->
-                    </div>
-                </div>
-                <!-- END PAGE HEAD-->
+
                 <!-- BEGIN PAGE CONTENT BODY -->
                 <div class="page-content">
-                    <div class="container">
-                        <!-- BEGIN PAGE BREADCRUMBS -->
-                        <ul class="page-breadcrumb breadcrumb">
-                            <li>
-                                <a href="index.html">Home</a>
-                                <i class="fa fa-circle"></i>
-                            </li>
-                            <li>
-                                <span>Dashboard</span>
-                            </li>
-                        </ul>
-                        <!-- END PAGE BREADCRUMBS -->
+                    <div class="container ">
+
                         <!-- BEGIN PAGE CONTENT INNER -->
                         @yield('content')
                         <!-- END PAGE CONTENT INNER -->

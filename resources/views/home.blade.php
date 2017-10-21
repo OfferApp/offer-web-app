@@ -1,6 +1,7 @@
 @extends('layouts2.offerApp')
 
 @section('content')
+
 <div class="page-content-wrapper ">
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content">
@@ -10,8 +11,8 @@
         <!-- BEGIN PAGE BAR -->
         <div class="page-bar">
         <!-- BEGIN PAGE BASE CONTENT -->
-        <div class="row widget-row">
-          <div class="col-md-12 col-sm-9 col-xs-12  margin-bottom-20">
+        <div class="row ">
+          <!-- <div class="col-md-12 col-sm-9 col-xs-12  margin-bottom-20">
               <div class="portlet light portlet-fit bordered">
                   <div >
                       <div class="mt-element-step ">
@@ -41,8 +42,8 @@
                       </div>
                   </div>
               </div>
-          </div>
-            <div class="col-md-12 col-sm-9 col-xs-12 margin-bottom-20">
+          </div> -->
+            <div class="col-md-12 col-sm-9 col-xs-12 ">
                 <!-- BEGIN WIDGET GRADIENT -->
                 <div class="clearfix"></div>
                 <div id="carousel-example-generic-v1" class="carousel slide widget-carousel" data-ride="carousel">
@@ -74,7 +75,7 @@
                         <div class="item">
                             <div class="widget-gradient" style="background: url(../assets/apps/img/foods.jpg)">
                                 <div class="widget-gradient-body">
-                                    <h3 class="widget-gradient-title">Foody</h3>
+                                    <h3 class="widget-gradient-title">Food</h3>
                                     <ul class="widget-gradient-body-actions list-inline">
                                         <li>
                                             <a href="#">

@@ -4,7 +4,8 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo clearfix">
             <a href="index.html">
-                <img src="../assets/layouts/layout/img/logo.png"  alt="logo" class="logo-default" /> </a>
+                </a>
+                <img src="../assets/layouts/layout3/img/logo1.png"  width="75%" alt="logo" class="logo-default" />
                 <div class="menu-toggler sidebar-toggler ">
                     <span></span>
                 </div>

@@ -13,7 +13,7 @@ use Auth;
 class LoginController extends Controller
 {
   //Where to redirect seller after login.
-    protected $redirectTo = '/vendor_home';
+    protected $redirectTo = '/';
 
   //Trait
   use AuthenticatesUsers;

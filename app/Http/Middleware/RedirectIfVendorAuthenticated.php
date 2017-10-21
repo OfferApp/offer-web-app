@@ -25,7 +25,7 @@ class RedirectIfVendorAuthenticated
        //If request comes from logged in vendor, he will
        //be redirected to vendor's home page.
        if (Auth::guard('web_vendor')->check()) {
-           return redirect('/vendor_home');
+           return redirect('/');
        }
        return $next($request);
    }

@@ -72,7 +72,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <h3>Sign Up</h3>
                 <p> Enter your personal details below: </p>
 
-                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}" id="fullname">
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}" id="name">
                     <label class="control-label visible-ie8 visible-ie9">Full Name</label>
                     <div class="input-icon">
                         <i class="fa fa-font"></i>

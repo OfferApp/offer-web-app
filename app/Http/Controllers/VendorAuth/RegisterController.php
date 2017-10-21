@@ -19,7 +19,7 @@ class RegisterController extends Controller
    protected $redirectPath = 'vendor_login';
   //shows registration form to vendor
 public function showRegistrationForm()
-{ 
+{
     return view('auth.register');
 }
 //Handles registration request for vendor
@@ -31,8 +31,6 @@ public function showRegistrationForm()
        //Create vendor
         $user = $this->create($request->all());
 
-        \Mail::to($user)->send(new verified($user));
-
        //Redirects vendors
         return redirect($this->redirectPath);
     }
@@ -43,7 +41,7 @@ public function showRegistrationForm()
         return Validator::make($data, [
             'name' => 'required|max:255',
             'username' => 'required|max:255|unique:users',
-            'mobile_no' => 'required|regex:/(91)[0-9]/',
+            'mobile_no' => 'required|regex:/[0-9]/',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6',
             'rpassword' => 'required|min:6|same:password',

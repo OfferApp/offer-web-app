@@ -61,7 +61,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN LOGO -->
         <div class="logo">
             <a href="index.html">
-                <img src="../assets/pages/img/logo1.png"  height="35%" width="35%"alt="" /> </a>
+                <img src="../assets/pages/img/login/logo1.png"  alt="App Logo" /> </a>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->
@@ -74,18 +74,29 @@ License: You must have a valid license purchased only from themeforest(the above
                     <button class="close" data-close="alert"></button>
                     <span> Enter any username and password. </span>
                 </div>
-                <div class="form-group">
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
                     <label class="control-label visible-ie8 visible-ie9">Email</label>
                     <div class="input-icon">
                         <i class="fa fa-user"></i>
                         <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
+                        @if ($errors->has('email'))
+                          <span class="help-block alert-danger">
+                            <strong>{{ $errors->first('email') }}</strong>
+                          </span>
+                        @endif
                 </div>
-                <div class="form-group">
+
+                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <label class="control-label visible-ie8 visible-ie9">Password</label>
                     <div class="input-icon">
                         <i class="fa fa-lock"></i>
                         <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
+                        @if ($errors->has('password'))
+                          <span class="help-block alert-danger">
+                            <strong>{{ $errors->first('password') }}</strong>
+                          </span>
+                        @endif
                 </div>
                 <div class="form-actions">
                     <label class="rememberme mt-checkbox mt-checkbox-outline">
