@@ -77,24 +77,17 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="page-content">
                     <div class="container">
                         <!-- BEGIN PAGE CONTENT INNER -->
-                        <div id="carousel-example-generic-v1" class="carousel slide widget-carousel" data-ride="carousel" class="page-content-inner">
+                        <div class="page-content-inner">
                           <div class=" cbp-singlePage portfolio-content" rel="nofollow">
                               <div class="cbp-l-project-title">{{$vendor->fullName}}</div>
                               <div class="cbp-l-project-subtitle">Owner of {{$vendor->shopName}}</div>
                               <div class="cbp-slider">
                                   <ul class="cbp-slider-wrap">
                                       <li class="cbp-slider-item">
-                                          <a href="../assets/global/img/portfolio/1200x900/13.jpg" class="cbp-lightbox">
+                                          <a href="{{$vendor->vendorLogo}}" class="cbp-lightbox">
                                               <img src="../assets/global/img/portfolio/1200x900/13.jpg" alt=""> </a>
                                       </li>
-                                      <li class="cbp-slider-item">
-                                          <a href="../assets/global/img/portfolio/1200x900/14.jpg" class="cbp-lightbox">
-                                              <img src="../assets/global/img/portfolio/1200x900/14.jpg" alt=""> </a>
-                                      </li>
-                                      <li class="cbp-slider-item">
-                                          <a href="../assets/global/img/portfolio/1200x900/01.jpg" class="cbp-lightbox">
-                                              <img src="../assets/global/img/portfolio/1200x900/01.jpg" alt=""> </a>
-                                      </li>
+
                                   </ul>
                               </div>
                               <div class="cbp-l-project-container">
@@ -108,7 +101,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                   </div>
                                   <div class="cbp-l-project-details">
                                       <div class="cbp-l-project-details-title">
-                                          <span>Project Details</span>
+                                          <span>Vendor's Details</span>
                                       </div>
                                       <ul class="cbp-l-project-details-list">
                                           <li>
@@ -118,7 +111,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                           <li>
                                               <strong>Contact Us</strong>{{$vendor->shopContactNo}}</li>
                                       </ul>
-                                      <a href="#" target="_blank" class="cbp-l-project-details-visit btn red uppercase">visit the site</a>
+                                      <a href="{{route('home')}}"  class="cbp-l-project-details-visit btn red uppercase">visit the site</a>
                                   </div>
                               </div>
                               <div class="cbp-l-project-container">

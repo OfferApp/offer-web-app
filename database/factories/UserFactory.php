@@ -48,7 +48,7 @@ $factory->define(App\Vendor::class, function (Faker $faker) {
     return [
         'fullName' => $faker->name,
         'shopName' => $faker->word,
-        'vendorLogo' => $faker->image('public/assets/global/img/portfolio/400x300',400,300),
+        'vendorLogo' => $faker->image('/assets/global/img/portfolio/400x300',400,300),
         'shopAddress' => $faker->streetAddress,
         'shopContactNo' => $faker->phoneNumber,
         'website' => $faker->url,

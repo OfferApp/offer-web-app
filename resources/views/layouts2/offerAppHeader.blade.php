@@ -374,7 +374,7 @@
             <div class="hor-menu  ">
                 <ul class="nav navbar-nav">
                   <li class="menu-dropdown ">
-                      <a href="javascript:;" class="nav-link nav-toggle ">
+                      <a href="{{route('home')}}" class="nav-link nav-toggle ">
                       <i class="icon-home"></i> Home
                           <span class="arrow"></span>
                       </a>
