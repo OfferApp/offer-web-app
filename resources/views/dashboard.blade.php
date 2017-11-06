@@ -85,7 +85,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                   <ul class="cbp-slider-wrap">
                                       <li class="cbp-slider-item">
                                           <a href="{{$vendor->vendorLogo}}" class="cbp-lightbox">
-                                              <img src="../assets/global/img/portfolio/1200x900/13.jpg" alt=""> </a>
+                                              <img src="{{$vendor->vendorLogo}}" alt=""> </a>
                                       </li>
 
                                   </ul>
