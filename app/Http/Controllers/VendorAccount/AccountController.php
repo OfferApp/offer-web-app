@@ -4,6 +4,11 @@ namespace App\Http\Controllers\VendorAccount;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Mapper;
+use App\Vendor;
+use Response;
+use Auth;
+use App\Offer;
 
 class AccountController extends Controller
 {
@@ -12,9 +17,35 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function setPersonalInfo(Request $request)
+    {
+        dd($request);
+    }
+
+    public function setAvatar(Request $request)
+    {
+      dd($request);
+    }
+
+    public function setPassword(Request $request)
+    {
+        dd($request);
+    }
+
+    public function setLocation(Request $request)
+    {
+      $address = $request['address'];
+      Mapper::location($address)
+      ->map(['zoom' => 15, 'center' => true, 'marker' => true, 'type' => 'HYBRID', 'overlay' => 'TRAFFIC']);
+    return view('newVendorAccount',compact('map'));
+    }
+
     public function index()
     {
-        //
+      $vendor = Vendor::where('user_id', Auth::guard('web_vendor')->user()->id)->first();
+      $offers = Offer::where('vendor_id',Auth::guard('web_vendor')->user()->id)
+                               ->get();
+    return view('dashboard',compact(['vendor','offers']));
     }
 
     /**
@@ -24,7 +55,16 @@ class AccountController extends Controller
      */
     public function create()
     {
-        return view('newVendorAccount');
+      // Draw a map
+          $vendor = Vendor::all();
+          $address = $vendor->first()->shopAddress;
+          $latitude= $vendor->first()->xCoordinate;
+          $longitude = $vendor->first()->yCoordinate;
+          $content = $vendor->first()->fullName;
+          Mapper::location($address)
+          ->map(['zoom' => 15, 'center' => true, 'marker' => true, 'type' => 'HYBRID', 'overlay' => 'TRAFFIC']);
+
+        return view('newVendorAccount',compact('map'));
     }
 
     /**

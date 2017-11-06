@@ -380,7 +380,7 @@
                       </a>
                       <ul class="dropdown-menu">
                           <li class=" ">
-                              <a href="ecommerce_index.html" class="nav-link ">
+                              <a href="{{route('dashboard')}}" class="nav-link ">
                                   <i class="icon-bar-chart"></i> Dashboard </a>
                           </li>
                       </ul>
