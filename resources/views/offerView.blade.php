@@ -100,6 +100,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                    @foreach($offers as $offer)
                                         @if ($offer->category == 'clothing')
 
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -113,6 +114,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                         <div class="cbp-item identity">
 >>>>>>> Final Update done
+=======
+                                        <div class="cbp-item identity">
+>>>>>>> gui
                                             <div class="cbp-caption">
                                                 <div class="cbp-caption-defaultWrap">
                                                     <img src="/assets/pages/media/works/{{$offer->offerPic}}" alt=""> </div>
@@ -163,6 +167,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="cbp-l-grid-projects-desc uppercase text-center">{{$offer->offerDescription}}</div>
                                         </div>
                                         @elseif ($offer->category == 'electronic')
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -176,6 +181,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                         <div class="cbp-item graphic">
 >>>>>>> Final Update done
+=======
+                                        <div class="cbp-item graphic">
+>>>>>>> gui
                                             <div class="cbp-caption">
                                                 <div class="cbp-caption-defaultWrap">
                                                     <img src="/assets/pages/media/works/{{$offer->offerPic}}" alt=""> </div>

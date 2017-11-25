@@ -66,6 +66,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- BEGIN PAGE TITLE -->
                         <div class="page-title">
                             <h1>Vendor
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -79,6 +80,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                 <small>Gallery</small>
 >>>>>>> Final Update done
+=======
+                                <small>Gallery</small>
+>>>>>>> gui
                             </h1>
                         </div>
                         <!-- END PAGE TITLE -->
@@ -133,6 +137,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                       </div>
                                       <ul class="cbp-l-project-related-wrap">
                                       @foreach ($offers as $offer)
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -143,12 +148,15 @@ License: You must have a valid license purchased only from themeforest(the above
 >>>>>>> Finale Update done
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
                                           <li class="cbp-l-project-related-item">
                                               <a href="ajax-juicy-projects/project1.html" class="cbp-singlePage cbp-l-project-related-link" rel="nofollow">
                                                   <img src="/assets/pages/media/works/{{$offer->offerPic}}" alt="">
                                                   <div class="cbp-l-project-related-title">{{$offer->offerName}}</div>
                                               </a>
                                           </li>
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -164,6 +172,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                       @endforeach
 >>>>>>> Final Update done
+=======
+                                      @endforeach
+>>>>>>> gui
                                       </ul>
 
                                   </div>

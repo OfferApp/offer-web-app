@@ -42,6 +42,7 @@ class DatabaseSeeder extends Seeder
 
 
         $usersQuantity=20;
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -63,6 +64,11 @@ class DatabaseSeeder extends Seeder
         $customersQuantity=15;
         $categoriesQuantity=5;
 >>>>>>> Final Update done
+=======
+        $vendorsQuantity=5;
+        $customersQuantity=15;
+        $categoriesQuantity=5;
+>>>>>>> gui
         $offersQuantity=20;
         $bookmarksQuantity=20;
         $category_has_offersQuantity=20;

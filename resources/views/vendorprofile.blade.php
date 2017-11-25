@@ -4,6 +4,7 @@
     <div class="cbp-slider">
         <ul class="cbp-slider-wrap">
             <li class="cbp-slider-item">
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -29,6 +30,10 @@
                 <a href="{{$vendor->vendorLogo}}" class="cbp-lightbox">
                     <img src="{{$vendor->vendorLogo}}" alt=""> </a>
 >>>>>>> Final Update done
+=======
+                <a href="{{$vendor->vendorLogo}}" class="cbp-lightbox">
+                    <img src="{{$vendor->vendorLogo}}" alt=""> </a>
+>>>>>>> gui
             </li>
         </ul>
     </div>
@@ -43,6 +48,7 @@
         </div>
         <div class="cbp-l-project-details">
             <div class="cbp-l-project-details-title">
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -56,6 +62,9 @@
 =======
                 <span>Vendor Details</span>
 >>>>>>> Final Update done
+=======
+                <span>Vendor Details</span>
+>>>>>>> gui
             </div>
             <ul class="cbp-l-project-details-list">
                 <li>
@@ -82,6 +91,7 @@
                         <div class="cbp-l-project-related-title">{{$offer->offerName}}</div>
                     </a>
                 </li>
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -94,6 +104,9 @@
 =======
                 
 >>>>>>> Final Update done
+=======
+                
+>>>>>>> gui
 
             @endforeach
 

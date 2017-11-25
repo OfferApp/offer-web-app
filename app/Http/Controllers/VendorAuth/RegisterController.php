@@ -77,6 +77,7 @@ public function showRegistrationForm()
     //Create a new vendor instance after a validation.
     protected function create(array $data)
     {
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -91,6 +92,8 @@ public function showRegistrationForm()
 >>>>>>> Finale Update done
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
         $type = $data['type'];
         if ($type == 'vendor') {
           $role_id = '1';
@@ -100,6 +103,7 @@ public function showRegistrationForm()
           $role_id = '2';
         }
         $user =  User::create([
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 >>>>>>> Final Update done
@@ -107,6 +111,8 @@ public function showRegistrationForm()
 >>>>>>> Finale Update done
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
             'username' => $data['username'],
             'email' => $data['email'],
             'mobile' => $data['mobile_no'],

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Offer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -13,6 +14,9 @@ use App\Http\Requests\offerRequest;
 =======
 use App\Http\Requests\offerRequest;
 >>>>>>> Final Update done
+=======
+use App\Http\Requests\offerRequest;
+>>>>>>> gui
 use App\Offer;
 use App\Vendor;
 use Auth;
@@ -37,6 +41,7 @@ class OfferController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -45,14 +50,19 @@ class OfferController extends Controller
 =======
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
         $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
 
         $offers = Offer::where('vendor_id',$vendor->id)->get();
         // return $offers;
+<<<<<<< HEAD
 <<<<<<< master
 >>>>>>> Finale Update done
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
         return view('offerView',compact('offers'));
 =======
 <<<<<<< refs/remotes/origin/master
@@ -86,6 +96,7 @@ class OfferController extends Controller
      */
     public function store(offerRequest $request)
     {
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -108,6 +119,8 @@ class OfferController extends Controller
 >>>>>>> Finale Update done
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
              $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
              if ($request['offername'] == 1) {
                $offername = 'Buy '.$request['buy'].' get '.$request['get'];
@@ -157,6 +170,7 @@ class OfferController extends Controller
 
                return view('createOffer',compact(['msg']));
              }
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 >>>>>>> Final Update done
@@ -165,6 +179,8 @@ class OfferController extends Controller
 >>>>>>> Finale Update done
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
     }
 
     /**

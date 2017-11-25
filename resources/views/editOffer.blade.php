@@ -102,7 +102,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                     @endif
                                     @if($errors->has('offerimages'))
+<<<<<<< HEAD
 <<<<<<< master
+=======
+>>>>>>> gui
                                     <div class="note note-danger">
                                         <p>{{$errors->first('offerimages')}}</p>
                                     </div>
@@ -113,6 +116,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                     @endif
                                     @if($errors->has('label'))
+<<<<<<< HEAD
                                     <div class="note note-danger">
                                         <p>{{$errors->first('label')}}</p>
                                     </div>
@@ -133,6 +137,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                     @endif
 >>>>>>> Final Update done
+=======
+                                    <div class="note note-danger">
+                                        <p>{{$errors->first('label')}}</p>
+                                    </div>
+                                    @endif
+>>>>>>> gui
 
 
                                     <!-- Begin: life time stats -->
@@ -149,6 +159,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <button class="btn btn-sm btn-success table-group-action-submit">
                                                         <i class="fa fa-check"></i> Submit</button>
                                                 </div>
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< refs/remotes/origin/master
@@ -176,6 +187,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                                 <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
 >>>>>>> Final Update done
+=======
+                                                <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
+>>>>>>> gui
                                                             {{csrf_field()}}
                                                   <div class="portlet light portlet-fit ">
                                                       <div class="portlet-title">
@@ -190,6 +204,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                   <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
                                                                       <input type="radio" name="options" class="toggle" id="option2">Settings</label>
                                                               </div>
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
                                                                 <td>
@@ -235,6 +250,8 @@ License: You must have a valid license purchased only from themeforest(the above
 >>>>>>> Finale Update done
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
                                                           </div>
                                                       </div>
                                                       <div class="portlet-body">
@@ -308,6 +325,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                       </div>
                                                   </div>
                                                 </form>
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 >>>>>>> Final Update done
@@ -315,6 +333,8 @@ License: You must have a valid license purchased only from themeforest(the above
 >>>>>>> Finale Update done
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
                                             </div>
                                         </div>
                                     <!-- End: life time stats -->

@@ -93,6 +93,7 @@ return [
     | location.
     |
     */
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -106,6 +107,9 @@ return [
 =======
     'locate' => true,
 >>>>>>> Final Update done
+=======
+    'locate' => true,
+>>>>>>> gui
 
     /*
     |--------------------------------------------------------------------------
@@ -115,6 +119,7 @@ return [
     | The default zoom level Googlmapper should use.
     |
     */
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -128,6 +133,9 @@ return [
 =======
     'zoom' => 18,
 >>>>>>> Final Update done
+=======
+    'zoom' => 18,
+>>>>>>> gui
 
     /*
     |--------------------------------------------------------------------------
@@ -247,6 +255,7 @@ return [
         | Display an animation effect for markers. (NONE|DROP|BOUNCE)
         |
         */
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -260,6 +269,9 @@ return [
 =======
         'animation' => 'DROP',
 >>>>>>> Final Update done
+=======
+        'animation' => 'DROP',
+>>>>>>> gui
 
     ],
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\VendorAccount;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -18,6 +19,9 @@ use App\Http\Requests\vendorProfile;
 =======
 use App\Http\Requests\vendorProfile;
 >>>>>>> Final Update done
+=======
+use App\Http\Requests\vendorProfile;
+>>>>>>> gui
 use Mapper;
 use App\Vendor;
 use Response;
@@ -35,6 +39,7 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -45,6 +50,9 @@ class AccountController extends Controller
 =======
     public function PersonalInfo()
 >>>>>>> Final Update done
+=======
+    public function PersonalInfo()
+>>>>>>> gui
     {
         return view('vendorPersonalInfo');
     }
@@ -71,6 +79,7 @@ class AccountController extends Controller
         Mapper::location($address)
         ->map(['zoom' => 15, 'center' => true, 'marker' => true, 'type' => 'HYBRID', 'overlay' => 'TRAFFIC']);
         return view('vendorLocation',compact('map'));
+<<<<<<< HEAD
 <<<<<<< master
     }
 
@@ -214,6 +223,30 @@ class AccountController extends Controller
     public function setAvatar(vendorProfile $request)
     {
 >>>>>>> Final Update done
+=======
+    }
+
+    public function setPersonalInfo(vendorProfile $request)
+    {
+
+        $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
+        $vendor->fullName = $request['firstName'];
+        $vendor->shopName = $request['shopName'];
+        $vendor->shopAddress = $request['address'];
+        $vendor->shopContactNo = $request['mobileNo'];
+        $vendor->zipCode = $request['zipcode'];
+        $vendor->website = $request['website'];
+        $vendor->xCoordinate = '18.25';
+        $vendor->yCoordinate = '75.23';
+        $vendor->user_id = Auth::guard('web_vendor')->user()->id;
+        $vendor->save();
+
+        return view('vendorPersonalInfo');
+    }
+
+    public function setAvatar(vendorProfile $request)
+    {
+>>>>>>> gui
       $file = $request->file('avatar');
       $destinationPath = 'assets/pages/media/works/';
       $file->move($destinationPath,$file->getClientOriginalName());
@@ -275,6 +308,7 @@ class AccountController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
 <<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
@@ -298,6 +332,8 @@ class AccountController extends Controller
 >>>>>>> Finale Update done
 =======
 >>>>>>> Final Update done
+=======
+>>>>>>> gui
     }
 
     /**
