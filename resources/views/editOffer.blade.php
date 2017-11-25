@@ -102,26 +102,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                     @endif
                                     @if($errors->has('offerimages'))
-<<<<<<< HEAD
-<<<<<<< master
-=======
->>>>>>> gui
-                                    <div class="note note-danger">
-                                        <p>{{$errors->first('offerimages')}}</p>
-                                    </div>
-                                    @endif
-                                    @if($errors->has('category'))
-                                    <div class="note note-danger">
-                                        <p>{{$errors->first('category')}}</p>
-                                    </div>
-                                    @endif
-                                    @if($errors->has('label'))
-<<<<<<< HEAD
-                                    <div class="note note-danger">
-                                        <p>{{$errors->first('label')}}</p>
-                                    </div>
-                                    @endif
-=======
                                     <div class="note note-danger">
                                         <p>{{$errors->first('offerimages')}}</p>
                                     </div>
@@ -136,13 +116,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <p>{{$errors->first('label')}}</p>
                                     </div>
                                     @endif
->>>>>>> Final Update done
-=======
-                                    <div class="note note-danger">
-                                        <p>{{$errors->first('label')}}</p>
-                                    </div>
-                                    @endif
->>>>>>> gui
 
 
                                     <!-- Begin: life time stats -->
@@ -159,78 +132,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <button class="btn btn-sm btn-success table-group-action-submit">
                                                         <i class="fa fa-check"></i> Submit</button>
                                                 </div>
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< refs/remotes/origin/master
-                                                <table class="table table-striped table-bordered table-hover table-checkable" id="datatable_products">
-                                                    <thead>
-                                                        <tr role="row" class="heading">
-                                                            <th width="1%">
-                                                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                    <input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes" />
-                                                                    <span></span>
-                                                                </label>
-                                                            </th>
-                                                            <th width="10%"> ID </th>
-                                                            <th width="15%"> Offer&nbsp;Name </th>
-                                                            <th width="15%"> Category </th>
-                                                            <th width="15%"> Date&nbsp;Created </th>
-                                                            <th width="20%"> Description </th>
-                                                            <th width="20%">Status </th>
-                                                            <th width="10%"> Actions </th>
-                                                        </tr>
-                                                      <form  action="{{route('storeEdit')}}" method="post">
-=======
-                                                <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
->>>>>>> Finale Update done
-=======
-                                                <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
->>>>>>> Final Update done
-=======
-                                                <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
->>>>>>> gui
-                                                            {{csrf_field()}}
-                                                  <div class="portlet light portlet-fit ">
-                                                      <div class="portlet-title">
-                                                          <div class="caption">
-                                                              <i class="fa fa-cart-plus font-red"></i>
-                                                              <span class="caption-subject font-red sbold uppercase">Edit Offer</span>
-                                                          </div>
-                                                          <div class="actions">
-                                                              <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                                                  <label class="btn btn-transparent red btn-outline btn-circle btn-sm active">
-                                                                      <input type="radio" name="options" class="toggle" id="option1">Actions</label>
-                                                                  <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
-                                                                      <input type="radio" name="options" class="toggle" id="option2">Settings</label>
-                                                              </div>
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-                                                                <td>
-                                                                    <input type="text" class="form-control form-filter input-sm" name="product_description"> </td>
-                                                            <td>
-                                                                <select name="product_status" class="form-control form-filter input-sm">
-                                                                    <option value="">Select...</option>
-                                                                    <option value="published">Published</option>
-                                                                    <option value="notpublished">Not Published</option>
-                                                                    <option value="deleted">Deleted</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <div class="margin-bottom-5">
-
-                                                                </div>
-                                                                <button class="btn btn-sm btn-default filter-cancel">
-                                                                    <i class="fa fa-times"></i> Reset</button>
-                                                            </td>
-                                                        </tr>
-                                                        <button type="submit" class="btn green pull-right"> Edit </button>
-                                                      </form>
-                                                    </thead>
-                                                    <tbody> </tbody>
-                                                </table>
-=======
                                                 <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
                                                             {{csrf_field()}}
                                                   <div class="portlet light portlet-fit ">
@@ -246,12 +147,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                   <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
                                                                       <input type="radio" name="options" class="toggle" id="option2">Settings</label>
                                                               </div>
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
                                                           </div>
                                                       </div>
                                                       <div class="portlet-body">
@@ -325,16 +220,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                       </div>
                                                   </div>
                                                 </form>
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
->>>>>>> Final Update done
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
                                             </div>
                                         </div>
                                     <!-- End: life time stats -->

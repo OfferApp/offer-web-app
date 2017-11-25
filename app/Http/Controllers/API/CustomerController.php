@@ -7,27 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Offer;
 use App\User;
-<<<<<<< Updated upstream
-use App\Customer;
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-=======
-<<<<<<< refs/remotes/origin/master
-=======
 use App\Customer;
 use App\Bookmark;
->>>>>>> Final Update done
->>>>>>> Stashed changes
-=======
-use App\Bookmark;
->>>>>>> Finale Update done
-=======
-use App\Bookmark;
->>>>>>> Final Update done
-=======
-use App\Bookmark;
->>>>>>> gui
 use Auth;
 use DB;
 
@@ -48,35 +29,11 @@ class CustomerController extends Controller
             Auth::attempt(['mobile' => request('username'), 'password' => request('password')])){
             $user = Auth::user();
             $verified = Auth::user()->verified;
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< refs/remotes/origin/master
-            if($verified == 1){
-              $success['token'] =  $user->createToken('OfferApp')->accessToken;
-              return response()->json(['success' => $success, 'StatusCode' => $this->successStatus], $this->successStatus);
-=======
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
             if($verified == true){
               $token =  $user->createToken('OfferApp')->accessToken;
               return response()->json(['token' => $token,
                                        'StatusCode' => $this->successStatus],
                                         $this->successStatus);
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
->>>>>>> Final Update done
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
             }
             return response()->json(['error'=>'Unverified Account',
                                      'StatusCode' => 406]);
@@ -185,42 +142,11 @@ class CustomerController extends Controller
       $errorMobileNo = 'true';
 
         $validator = Validator::make($request->all(), [
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< Updated upstream
-          'fullname' => 'required|max:255',
-=======
-<<<<<<< refs/remotes/origin/master
-          'name' => 'required|max:255',
->>>>>>> Stashed changes
-          'username' => 'required|max:255|unique:users',
-          'mobile' => 'required|regex:/[0-9]/',
-          'email' => 'required|email|max:255|unique:users',
-          'password' => 'required|min:6',
-          'rpassword' => 'required|min:6|same:password',
-=======
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
           'id' => 'required',
           'name' => 'required|',
           'username' => 'required|max:255|unique:users,username,'.$request->id,
           'mobile' => 'required|regex:/[0-9]/|unique:users,mobile,'.$request->id,
           'email' => 'required|email|max:255|unique:users,email,'.$request->id,
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
->>>>>>> Final Update done
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
         ]);
 
         if ($validator->fails()) {
@@ -242,47 +168,11 @@ class CustomerController extends Controller
         }
 
         $input = $request->all();
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< refs/remotes/origin/master
-        $user = User::create([
-            'username' => $input['username'],
-            'email' => $input['email'],
-            'mobile' =>$input['mobile'],
-            'verified' => '0',
-            'role_id' => '2',
-            'password' => bcrypt($input['password']),
-        ]);
-        $customer = Customer::create([
-          'fullName' => $input['fullname'],
-          'profilePicture' => 'profile-picture.png',
-          'user_id' => $user['id'],
-        ]);
-        $success['token'] =  $user->createToken('project2')->accessToken;
-        $success['name'] =  $user->username;
-=======
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
         $user = User::where('id',$input['id'])->first();
         $user->username = $input['username'];
         $user->email = $input['email'];
         $user->mobile = $input['mobile'];
         $user->save();
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
->>>>>>> Final Update done
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
 
         $customer = Customer::where('user_id',$input['id'])->first();
         $customer->fullName = $input['name'];

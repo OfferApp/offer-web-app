@@ -4,36 +4,8 @@
     <div class="cbp-slider">
         <ul class="cbp-slider-wrap">
             <li class="cbp-slider-item">
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< Updated upstream
-                <a href="../assets/global/img/portfolio/1200x900/13.jpg" class="cbp-lightbox">
-                    <img src="../assets/global/img/portfolio/1200x900/13.jpg" alt=""> </a>
-            </li>
-            <li class="cbp-slider-item">
-                <a href="../assets/global/img/portfolio/1200x900/14.jpg" class="cbp-lightbox">
-                    <img src="../assets/global/img/portfolio/1200x900/14.jpg" alt=""> </a>
-            </li>
-            <li class="cbp-slider-item">
-                <a href="../assets/global/img/portfolio/1200x900/01.jpg" class="cbp-lightbox">
-                    <img src="../assets/global/img/portfolio/1200x900/01.jpg" alt=""> </a>
-=======
                 <a href="{{$vendor->vendorLogo}}" class="cbp-lightbox">
                     <img src="{{$vendor->vendorLogo}}" alt=""> </a>
->>>>>>> Stashed changes
-=======
-                <a href="{{$vendor->vendorLogo}}" class="cbp-lightbox">
-                    <img src="{{$vendor->vendorLogo}}" alt=""> </a>
->>>>>>> Finale Update done
-=======
-                <a href="{{$vendor->vendorLogo}}" class="cbp-lightbox">
-                    <img src="{{$vendor->vendorLogo}}" alt=""> </a>
->>>>>>> Final Update done
-=======
-                <a href="{{$vendor->vendorLogo}}" class="cbp-lightbox">
-                    <img src="{{$vendor->vendorLogo}}" alt=""> </a>
->>>>>>> gui
             </li>
         </ul>
     </div>
@@ -48,23 +20,7 @@
         </div>
         <div class="cbp-l-project-details">
             <div class="cbp-l-project-details-title">
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< Updated upstream
-                <span>Project Details</span>
-=======
                 <span>Vendor Details</span>
->>>>>>> Stashed changes
-=======
-                <span>Vendor Details</span>
->>>>>>> Finale Update done
-=======
-                <span>Vendor Details</span>
->>>>>>> Final Update done
-=======
-                <span>Vendor Details</span>
->>>>>>> gui
             </div>
             <ul class="cbp-l-project-details-list">
                 <li>
@@ -91,22 +47,7 @@
                         <div class="cbp-l-project-related-title">{{$offer->offerName}}</div>
                     </a>
                 </li>
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< Updated upstream
-=======
                 
->>>>>>> Stashed changes
-=======
-                
->>>>>>> Finale Update done
-=======
-                
->>>>>>> Final Update done
-=======
-                
->>>>>>> gui
 
             @endforeach
 

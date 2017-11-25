@@ -23,21 +23,6 @@ Route::post('customersetPassword', 'API\CustomerController@setPassword');
 
 
 Route::group(['middleware' => 'auth:api'], function(){
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< Updated upstream
-Route::get('customerdetails', 'API\CustomerController@details');
-=======
-<<<<<<< refs/remotes/origin/master
-Route::post('details', 'API\CustomerController@details');
-=======
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
   Route::get('customerdetails', 'API\CustomerController@details');
   Route::post('customereditProfile', 'API\CustomerController@editProfile');
   Route::post('customereditProfilePicture', 'API\CustomerController@editProfilePic');
@@ -50,15 +35,4 @@ Route::post('details', 'API\CustomerController@details');
 
 
 
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
->>>>>>> Final Update done
->>>>>>> Stashed changes
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
 });

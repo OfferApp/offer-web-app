@@ -80,59 +80,6 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="page-content-inner">
                             <div class="row">
                                 <div class="col-md-12">
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< Updated upstream
-                                    <form class="form-horizontal form-row-seperated" method="post" action="{{route('storeEdit')}}">
-=======
-                                  @if(isset($msg))
-                                  <div class="note note-danger">
-                                      <p>{{$msg}}</p>
-                                  </div>
-                                  @endif
-                                  @if($errors->has('offername'))
-                                  <div class="note note-danger">
-                                      <p>{{$errors->first('offername')}}</p>
-                                  </div>
-                                  @endif
-                                  @if($errors->has('offer_description'))
-                                  <div class="note note-danger">
-                                      <p>{{$errors->first('offer_description')}}</p>
-                                  </div>
-                                  @endif
-                                  @if($errors->has('offer_expire'))
-                                  <div class="note note-danger">
-                                      <p>{{$errors->first('offer_expire')}}</p>
-                                  </div>
-                                  @endif
-                                  @if($errors->has('offerimages'))
-                                  <div class="note note-danger">
-                                      <p>{{$errors->first('offerimages')}}</p>
-                                  </div>
-                                  @endif
-                                  @if($errors->has('category'))
-                                  <div class="note note-danger">
-                                      <p>{{$errors->first('category')}}</p>
-                                  </div>
-                                  @endif
-                                  @if($errors->has('label'))
-                                  <div class="note note-danger">
-                                      <p>{{$errors->first('label')}}</p>
-                                  </div>
-                                  @endif
-
-                                    <form class="form-horizontal form-row-seperated" method="post" action="{{route('storeNew')}}">
->>>>>>> Finale Update done
-                                          {{csrf_field()}}
-=======
-<<<<<<< refs/remotes/origin/master
-                                    <form class="form-horizontal form-row-seperated" action="#">
-=======
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
                                   @if(isset($msg))
                                   <div class="note note-danger">
                                       <p>{{$msg}}</p>
@@ -171,8 +118,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                     <form class="form-horizontal form-row-seperated" method="post" action="{{route('storeNew')}}">
                                           {{csrf_field()}}
->>>>>>> Final Update done
->>>>>>> Stashed changes
                                         <div class="portlet">
                                             <div class="portlet-title">
                                                 <div class="caption">
@@ -183,56 +128,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <button class="btn btn-secondary-outline">
                                                         <i class="fa fa-reply"></i> Reset</button>
                                                     <button class="btn btn-success">
-<<<<<<< Updated upstream
-                                                        <i class="fa fa-check"></i> Save</button> -->
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-=======
-<<<<<<< refs/remotes/origin/master
-                                                        <i class="fa fa-check"></i> Save</button>
->>>>>>> Stashed changes
-                                                    <button class="btn btn-success">
-                                                        <i class="fa fa-check-circle"></i> Save & Continue Edit</button>
-                                                    <div class="btn-group">
-                                                        <a class="btn btn-success dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-                                                            <i class="fa fa-share"></i> More
-                                                            <i class="fa fa-angle-down"></i>
-                                                        </a>
-                                                        <div class="dropdown-menu pull-right">
-                                                            <li>
-                                                                <a href="javascript:;"> Duplicate </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:;"> Delete </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"> </li>
-                                                            <li>
-                                                                <a href="javascript:;"> Print </a>
-                                                            </li>
-                                                        </div>
-                                                    </div>
-=======
                                                         <i class="fa fa-check"></i> Save</button> -->
                                                     <!-- <button class="btn btn-success" type="submit">
                                                         <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
 
->>>>>>> Final Update done
-=======
-                                                    <!-- <button class="btn btn-success" type="submit">
-                                                        <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
-
->>>>>>> Finale Update done
-=======
-                                                    <!-- <button class="btn btn-success" type="submit">
-                                                        <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
-
->>>>>>> Final Update done
-=======
-                                                    <!-- <button class="btn btn-success" type="submit">
-                                                        <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
-
->>>>>>> gui
                                                 </div>
                                             </div>
                                             <div class="portlet-body">
@@ -253,40 +152,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                         <span class="required"> * </span>
                                                                     </label>
                                                                     <div class="col-md-10">
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< Updated upstream
-                                                                        <select class="table-group-action-input form-control input-medium" name="offername">
-=======
-<<<<<<< refs/remotes/origin/master
-                                                                        <select class="table-group-action-input form-control input-medium" name="product[tax_class]">
->>>>>>> Stashed changes
-                                                                            <option value="">Select...</option>
-                                                                            <option value="Buy 1 get 1 Free">Buy 1 get 1 Free</option>
-                                                                            <option value="50% off">50% off</option>
-                                                                            <option value="1000 CashBack on 6000 and above Purchase">1000 CashBack on 6000 and above Purchase</option>
-=======
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
                                                                         <select class="table-group-action-input form-control input-medium" id="offername" name="offername" required>
                                                                             <option value="1">Buy 1 get 1 Free</option>
                                                                             <option value="2">50% off</option>
                                                                             <option value="3">1000 CashBack on 6000 and above Purchase</option>
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
->>>>>>> Final Update done
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -361,40 +230,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                         <span class="required"> * </span>
                                                                     </label>
                                                                     <div class="col-md-10">
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< refs/remotes/origin/master
-                                                                        <div class="form-control height-auto">
-                                                                            <div class="scroller" style="height:275px;" data-always-visible="1">
-                                                                                <ul class="list-unstyled">
-                                                                                    <li>
-                                                                                      <label>
-                                                                                          <input type="checkbox" name="offer[categories][]" value="footwear">Footwear</label>
-                                                                                  </li>
-                                                                                  <li>
-                                                                                      <label>
-                                                                                          <input type="checkbox" name="offer[categories][]" value="clothing">Clothing</label>
-                                                                                  </li>
-                                                                                  <li>
-                                                                                      <label>
-                                                                                          <input type="checkbox" name="offer[categories][]" value="electronic">Electronic</label>
-                                                                                  </li>
-                                                                                  <li>
-                                                                                      <label>
-                                                                                          <input type="checkbox" name="offer[categories][]" value="hotel">Hotel</label>
-                                                                                  </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="help-block"> select one or more categories </span>
-=======
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
                                                                         <select class="table-group-action-input form-control input-medium" name="category">
                                                                           <option value="footwear">Footwear</option>
                                                                           <option value="hotels">Hotels</option>
@@ -402,16 +237,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                           <option value="clothing">Clothing</option>
 
                                                                         </select>
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
->>>>>>> Final Update done
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
@@ -420,27 +245,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     </label>
                                                                     <div class="col-md-10">
                                                                         <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< Updated upstream
-                                                                            <input type="text" class="form-control" name="offer_expire">
-=======
-<<<<<<< refs/remotes/origin/master
-                                                                            <input type="text" class="form-control" name="product_expire]">
-=======
                                                                             <input type="text" class="form-control" name="offer_expire" required>
->>>>>>> Final Update done
->>>>>>> Stashed changes
-=======
-                                                                            <input type="text" class="form-control" name="offer_expire" required>
->>>>>>> Finale Update done
-=======
-                                                                            <input type="text" class="form-control" name="offer_expire" required>
->>>>>>> Final Update done
-=======
-                                                                            <input type="text" class="form-control" name="offer_expire" required>
->>>>>>> gui
 
                                                                         <span class="help-block"> availability date. </span>
                                                                     </div>
@@ -452,73 +257,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         </div>
 
                                                         <div class="tab-pane" id="tab_images">
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< refs/remotes/origin/master
-                                                            <!-- <div class="alert alert-success margin-bottom-10">
-                                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                                                                <i class="fa fa-warning fa-lg"></i> Image type and information need to be specified. </div> -->
-                                                            <div id="tab_images_uploader_container" class="text-align-reverse margin-bottom-10">
-                                                                <a id="tab_images_uploader_pickfiles" href="javascript:;" class="btn btn-success">
-                                                                    <i class="fa fa-plus"></i> Select Files </a>
-                                                                <a id="tab_images_uploader_uploadfiles" href="javascript:;" class="btn btn-primary">
-                                                                    <i class="fa fa-share"></i> Upload Files </a>
-                                                            </div>
-<<<<<<< Updated upstream
-                                                            <div class="row">
-                                                                <div id="tab_images_uploader_filelist" class="col-md-6 col-sm-12"></div>
-=======
-                                                            <table class="table table-bordered table-hover">
-                                                                <thead>
-                                                                    <tr role="row" class="heading">
-                                                                        <th width="8%"> Image </th>
-                                                                        <th width="25%"> Label </th>
-                                                                        <th width="8%"> Sort Order </th>
-                                                                        <th width="10%"> Base Image </th>
-                                                                        <th width="10%"> Small Image </th>
-                                                                        <th width="10%"> Thumbnail </th>
-                                                                        <th width="10%"> </th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="../assets/pages/media/works/img1.jpg" class="fancybox-button" data-rel="fancybox-button">
-                                                                                <img class="img-responsive" src="../assets/pages/media/works/img1.jpg" alt=""> </a>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input type="text" class="form-control" name="offer[images][1][label]" value="Thumbnail image"> </td>
-                                                                        <td>
-                                                                            <input type="text" class="form-control" name="offer[images][1][sort_order]" value="1"> </td>
-                                                                        <td>
-                                                                            <label>
-                                                                                <input type="radio" name="offer[images][1][image_type]" value="1"> </label>
-                                                                        </td>
-                                                                        <td>
-                                                                            <label>
-                                                                                <input type="radio" name="offer[images][1][image_type]" value="2"> </label>
-                                                                        </td>
-                                                                        <td>
-                                                                            <label>
-                                                                                <input type="radio" name="offer[images][1][image_type]" value="3" checked> </label>
-                                                                        </td>
-=======
                                                             <div class="row">
 
->>>>>>> Stashed changes
-=======
-                                                            <div class="row">
-
->>>>>>> Finale Update done
-=======
-                                                            <div class="row">
-
->>>>>>> Final Update done
-=======
-                                                            <div class="row">
-
->>>>>>> gui
                                                                 <table class="table table-bordered table-hover">
                                                                     <thead>
                                                                         <tr role="row" class="heading">
@@ -540,23 +280,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                                     <input type="radio" name="offerimages" value="offer1.jpg" checked> </label>
                                                                             </td>
                                                                         </tr>
-<<<<<<< Updated upstream
-=======
-
-                                                                        <tr>
-                                                                            <td>
-                                                                                <a href="../assets/pages/media/works/offer2.jpg" class="fancybox-button" data-rel="fancybox-button">
-                                                                                    <img class="img-responsive" src="../assets/pages/media/works/offer2.jpg" alt=""> </a>
-                                                                            </td>
-                                                                            <td>
-                                                                                <input type="text" class="form-control" name="label" value="Offer image #6"> </td>
-                                                                            <td>
-                                                                                <label>
-                                                                                    <input type="radio" name="offerimages" value="offer6.jpg"> </label>
-                                                                            </td>
-                                                                        </tr>
->>>>>>> Final Update done
->>>>>>> Stashed changes
 
                                                                         <tr>
                                                                             <td>
@@ -612,22 +335,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 </table>
                                                             </div>
 
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
-<<<<<<< Updated upstream
-=======
-<<<<<<< refs/remotes/origin/master
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-=======
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
                                                             <div>
                                                               <a href="#tab_general" class="btn btn-success" data-toggle="tab"> Back </a>
                                                               <!-- <button type="button" name="back" class="btn btn-secondary-outline">
@@ -639,17 +346,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                               <!-- <button class="btn btn-success" type="submit">
                                                                   <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
                                                             </div>
-<<<<<<< HEAD
-<<<<<<< master
-<<<<<<< master
->>>>>>> Final Update done
->>>>>>> Stashed changes
-=======
->>>>>>> Finale Update done
-=======
->>>>>>> Final Update done
-=======
->>>>>>> gui
                                                         </div>
                                                     </div>
                                                 </div>
