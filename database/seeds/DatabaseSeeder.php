@@ -36,9 +36,9 @@ class DatabaseSeeder extends Seeder
 
 
         $usersQuantity=20;
-        $vendorsQuantity=20;
-        $customersQuantity=20;
-        $categoriesQuantity=20;
+        $vendorsQuantity=5;
+        $customersQuantity=15;
+        $categoriesQuantity=5;
         $offersQuantity=20;
         $bookmarksQuantity=20;
         $category_has_offersQuantity=20;

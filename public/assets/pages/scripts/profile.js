@@ -6,8 +6,9 @@ var Profile = function() {
 
         //main function
         init: function() {
-        
+
             Profile.initMiniCharts();
+            handleProfile();
         },
 
         initMiniCharts: function() {
@@ -58,7 +59,10 @@ var Profile = function() {
 
 }();
 
-if (App.isAngularJsApp() === false) { 
+
+
+
+if (App.isAngularJsApp() === false) {
     jQuery(document).ready(function() {
         Profile.init();
     });

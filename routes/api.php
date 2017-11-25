@@ -19,7 +19,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('customerlogin', 'API\CustomerController@login');
 Route::post('customerregister', 'API\CustomerController@register');
+Route::post('customersetPassword', 'API\CustomerController@setPassword');
+
 
 Route::group(['middleware' => 'auth:api'], function(){
-Route::get('customerdetails', 'API\CustomerController@details');
+  Route::get('customerdetails', 'API\CustomerController@details');
+  Route::post('customereditProfile', 'API\CustomerController@editProfile');
+  Route::post('customereditProfilePicture', 'API\CustomerController@editProfilePic');
+  Route::post('customeroffersdetails', 'API\CustomerController@offersDetails');
+  Route::post('customerofferdetails', 'API\CustomerController@offerByIdDetails');
+  Route::post('customerofferbookmark', 'API\CustomerController@offerBookmark');
+  Route::post('customergetbookmarks', 'API\CustomerController@getBookmarks');
+
+
+
+
+
 });
