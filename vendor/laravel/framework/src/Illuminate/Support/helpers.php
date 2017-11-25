@@ -88,7 +88,7 @@ if (! function_exists('array_dot')) {
 
 if (! function_exists('array_except')) {
     /**
-     * Get all of the given array except for a specified array of keys.
+     * Get all of the given array except for a specified array of items.
      *
      * @param  array  $array
      * @param  array|string  $keys

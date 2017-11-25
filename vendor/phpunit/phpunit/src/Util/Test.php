@@ -524,7 +524,7 @@ class Test
                 }
 
                 if ($data instanceof Traversable) {
-                    $data = \iterator_to_array($data, false);
+                    $data = \iterator_to_array($data);
                 }
 
                 if (\is_array($data)) {

@@ -31,8 +31,6 @@ use phpseclib\Crypt\Random;
 use phpseclib\Crypt\RSA;
 use phpseclib\File\ASN1\Element;
 use phpseclib\Math\BigInteger;
-use DateTime;
-use DateTimeZone;
 
 /**
  * Pure-PHP X.509 Parser
@@ -2084,7 +2082,7 @@ class X509
         }
 
         if (!isset($date)) {
-            $date = new DateTime($date, new DateTimeZone(@date_default_timezone_get()));
+            $date = time();
         }
 
         $notBefore = $this->currentCert['tbsCertificate']['validity']['notBefore'];
@@ -2094,8 +2092,8 @@ class X509
         $notAfter = isset($notAfter['generalTime']) ? $notAfter['generalTime'] : $notAfter['utcTime'];
 
         switch (true) {
-            case $date < new DateTime($notBefore, new DateTimeZone(@date_default_timezone_get())):
-            case $date > new DateTime($notAfter, new DateTimeZone(@date_default_timezone_get())):
+            case $date < @strtotime($notBefore):
+            case $date > @strtotime($notAfter):
                 return false;
         }
 
@@ -3340,11 +3338,7 @@ class X509
      */
     function _timeField($date)
     {
-        if ($date instanceof Element) {
-            return $date;
-        }
-        $dateObj = new DateTime($date, new DateTimeZone('GMT'));
-        $year = $dateObj->format('Y'); // the same way ASN1.php parses this
+        $year = @gmdate("Y", @strtotime($date)); // the same way ASN1.php parses this
         if ($year < 2050) {
             return array('utcTime' => $date);
         } else {
@@ -3409,12 +3403,8 @@ class X509
                 return false;
             }
 
-            $startDate = new DateTime('now', new DateTimeZone(@date_default_timezone_get()));
-            $startDate = !empty($this->startDate) ? $this->startDate : $startDate->format('D, d M Y H:i:s O');
-
-            $endDate = new DateTime('+1 year', new DateTimeZone(@date_default_timezone_get()));
-            $endDate = !empty($this->endDate) ? $this->endDate : $endDate->format('D, d M Y H:i:s O');
-
+            $startDate = !empty($this->startDate) ? $this->startDate : @date('D, d M Y H:i:s O');
+            $endDate = !empty($this->endDate) ? $this->endDate : @date('D, d M Y H:i:s O', strtotime('+1 year'));
             /* "The serial number MUST be a positive integer"
                "Conforming CAs MUST NOT use serialNumber values longer than 20 octets."
                 -- https://tools.ietf.org/html/rfc5280#section-4.1.2.2
@@ -3682,9 +3672,7 @@ class X509
 
         $currentCert = isset($this->currentCert) ? $this->currentCert : null;
         $signatureSubject = isset($this->signatureSubject) ? $this->signatureSubject : null;
-
-        $thisUpdate = new DateTime('now', new DateTimeZone(@date_default_timezone_get()));
-        $thisUpdate = !empty($this->startDate) ? $this->startDate : $thisUpdate->format('D, d M Y H:i:s O');
+        $thisUpdate = !empty($this->startDate) ? $this->startDate : @date('D, d M Y H:i:s O');
 
         if (isset($crl->currentCert) && is_array($crl->currentCert) && isset($crl->currentCert['tbsCertList'])) {
             $this->currentCert = $crl->currentCert;
@@ -3835,11 +3823,7 @@ class X509
      */
     function setStartDate($date)
     {
-        if (!is_object($date) || !is_a($date, 'DateTime')) {
-            $date = new DateTime($date, new DateTimeZone(@date_default_timezone_get()));
-        }
-
-        $this->startDate = $date->format('D, d M Y H:i:s O');
+        $this->startDate = @date('D, d M Y H:i:s O', @strtotime($date));
     }
 
     /**
@@ -3863,11 +3847,7 @@ class X509
             $temp = chr(ASN1::TYPE_GENERALIZED_TIME) . $asn1->_encodeLength(strlen($temp)) . $temp;
             $this->endDate = new Element($temp);
         } else {
-            if (!is_object($date) || !is_a($date, 'DateTime')) {
-                $date = new DateTime($date, new DateTimeZone(@date_default_timezone_get()));
-            }
-
-            $this->endDate = $date->format('D, d M Y H:i:s O');
+            $this->endDate = @date('D, d M Y H:i:s O', @strtotime($date));
         }
     }
 
@@ -4597,9 +4577,8 @@ class X509
         }
 
         $i = count($rclist);
-        $revocationDate = new DateTime('now', new DateTimeZone(@date_default_timezone_get()));
         $rclist[] = array('userCertificate' => $serial,
-                          'revocationDate'  => $this->_timeField($revocationDate->format('D, d M Y H:i:s O')));
+                          'revocationDate'  => $this->_timeField(@date('D, d M Y H:i:s O')));
         return $i;
     }
 

@@ -374,13 +374,13 @@
             <div class="hor-menu  ">
                 <ul class="nav navbar-nav">
                   <li class="menu-dropdown ">
-                      <a href="{{route('home')}}" class="nav-link nav-toggle ">
+                      <a href="javascript:;" class="nav-link nav-toggle ">
                       <i class="icon-home"></i> Home
                           <span class="arrow"></span>
                       </a>
                       <ul class="dropdown-menu">
                           <li class=" ">
-                              <a href="{{route('dashboard')}}" class="nav-link ">
+                              <a href="ecommerce_index.html" class="nav-link ">
                                   <i class="icon-bar-chart"></i> Dashboard </a>
                           </li>
                       </ul>

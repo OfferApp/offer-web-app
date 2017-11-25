@@ -145,8 +145,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <th width="20%">Status </th>
                                                             <th width="10%"> Actions </th>
                                                         </tr>
-                                                      <form  action="{{route('storeEdit')}}" method="post">
-                                                            {{csrf_field()}}
                                                         <tr role="row" class="filter">
                                                             <td> </td>
                                                             <td>
@@ -184,14 +182,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             </td>
                                                             <td>
                                                                 <div class="margin-bottom-5">
-
+                                                                    <button class="btn btn-sm btn-success filter-submit margin-bottom">
+                                                                        <i class="fa fa-search"></i> Search</button>
                                                                 </div>
                                                                 <button class="btn btn-sm btn-default filter-cancel">
                                                                     <i class="fa fa-times"></i> Reset</button>
                                                             </td>
                                                         </tr>
-                                                        <button type="submit" class="btn green pull-right"> Edit </button>
-                                                      </form>
                                                     </thead>
                                                     <tbody> </tbody>
                                                 </table>

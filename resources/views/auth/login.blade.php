@@ -78,7 +78,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
                     <label class="control-label visible-ie8 visible-ie9">Email</label>
                     <div class="input-icon">
-                      <i class="fa fa-user"></i>
+                        <i class="fa fa-user"></i>
                         <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
                         @if ($errors->has('email'))
                           <span class="help-block alert-danger">

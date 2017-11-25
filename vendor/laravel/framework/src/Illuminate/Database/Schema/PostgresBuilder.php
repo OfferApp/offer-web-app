@@ -34,16 +34,10 @@ class PostgresBuilder extends Builder
     {
         $tables = [];
 
-        $excludedTables = ['spatial_ref_sys'];
-
         foreach ($this->getAllTables() as $row) {
             $row = (array) $row;
 
-            $table = reset($row);
-
-            if (! in_array($table, $excludedTables)) {
-                $tables[] = $table;
-            }
+            $tables[] = reset($row);
         }
 
         if (empty($tables)) {

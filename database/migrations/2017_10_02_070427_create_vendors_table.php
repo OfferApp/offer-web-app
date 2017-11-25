@@ -19,15 +19,13 @@ class CreateVendorsTable extends Migration
           $table->string('shopName');
           $table->string('vendorLogo');
           $table->string('shopAddress');
-          $table->string('shopContactNo');
+          $table->integer('shopContactNo');
           $table->string('website');
           $table->float('xCoordinate');
           $table->float('yCoordinate');
-          $table->string('zipCode');
+          $table->integer('zipCode');
           $table->integer('user_id')->unsigned();
           $table->foreign('user_id')->references('id')->on('users');
-          $table->timestamps();
-
         });
     }
 

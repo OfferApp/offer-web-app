@@ -528,10 +528,6 @@ trait ValidatesAttributes
             return $key != $attribute && (bool) preg_match('#^'.$pattern.'\z#u', $key);
         });
 
-        if (in_array('ignore_case', $parameters)) {
-            return empty(preg_grep('/'.preg_quote($value, '/').'/iu', $data));
-        }
-
         return ! in_array($value, array_values($data));
     }
 

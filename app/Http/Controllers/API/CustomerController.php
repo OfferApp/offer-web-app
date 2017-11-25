@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\User;
-use App\Customer;
 use Auth;
 
 class CustomerController extends Controller
@@ -27,7 +26,7 @@ class CustomerController extends Controller
             $user = Auth::user();
             $verified = Auth::user()->verified;
             if($verified == 1){
-              $success['token'] =  $user->createToken('OfferApp')->accessToken;
+              $success['token'] =  $user->createToken('MyApp')->accessToken;
               return response()->json(['success' => $success, 'StatusCode' => $this->successStatus], $this->successStatus);
             }
             return response()->json(['error'=>'Unverified Account', 'StatusCode' => 406]);
@@ -48,8 +47,10 @@ class CustomerController extends Controller
       $errorUsername = 'true';
       $errorMobileNo = 'true';
 
+
+
         $validator = Validator::make($request->all(), [
-          'fullname' => 'required|max:255',
+          'name' => 'required|max:255',
           'username' => 'required|max:255|unique:users',
           'mobile' => 'required|regex:/[0-9]/',
           'email' => 'required|email|max:255|unique:users',
@@ -73,17 +74,13 @@ class CustomerController extends Controller
 
         $input = $request->all();
         $user = User::create([
+            'name' => $input['name'],
             'username' => $input['username'],
             'email' => $input['email'],
             'mobile' =>$input['mobile'],
             'verified' => '0',
             'role_id' => '2',
             'password' => bcrypt($input['password']),
-        ]);
-        $customer = Customer::create([
-          'fullName' => $input['fullname'],
-          'profilePicture' => 'profile-picture.png',
-          'user_id' => $user['id'],
         ]);
         $success['token'] =  $user->createToken('project2')->accessToken;
         $success['name'] =  $user->username;

@@ -10,7 +10,6 @@
 
 namespace PHPUnit\Framework\Constraint;
 
-use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
 
 class ArraySubsetTest extends TestCase
@@ -66,19 +65,5 @@ class ArraySubsetTest extends TestCase
         $constraint = new ArraySubset(['foo' => 'bar']);
 
         $this->assertTrue($constraint->evaluate($arrayAccess, '', true));
-    }
-
-    public function testEvaluateFailMessage()
-    {
-        $constraint = new ArraySubset(['foo' => 'bar']);
-        try {
-            $constraint->evaluate(['baz' => 'bar'], '', false);
-            $this->fail(\sprintf('Expected %s to be thrown.', ExpectationFailedException::class));
-        } catch (ExpectationFailedException $expectedException) {
-            $comparisonFailure = $expectedException->getComparisonFailure();
-            $this->assertNotNull($comparisonFailure);
-            $this->assertContains('[foo] => bar', $comparisonFailure->getExpectedAsString());
-            $this->assertContains('[baz] => bar', $comparisonFailure->getActualAsString());
-        }
     }
 }

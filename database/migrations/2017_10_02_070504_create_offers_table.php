@@ -20,12 +20,9 @@ class CreateOffersTable extends Migration
             $table->string('offerDescription');
             $table->date('offerExpiry');
             $table->integer('offerRating');
-            $table->string('offerLabel');
             $table->string('category');
             $table->integer('vendor_id')->unsigned();
             $table->foreign('vendor_id')->references('id')->on('vendors');
-            $table->timestamps();
-
 
         });
     }

@@ -2,7 +2,6 @@
 
 namespace Illuminate\Database;
 
-use Illuminate\Support\Arr;
 use InvalidArgumentException;
 use Illuminate\Console\Command;
 use Illuminate\Container\Container;
@@ -32,7 +31,7 @@ abstract class Seeder
      */
     public function call($class, $silent = false)
     {
-        $classes = Arr::wrap($class);
+        $classes = is_array($class) ? $class : (array) $class;
 
         foreach ($classes as $class) {
             if ($silent === false && isset($this->command)) {

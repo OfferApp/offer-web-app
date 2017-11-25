@@ -368,7 +368,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function load($relations)
     {
-        $query = $this->newQueryWithoutRelationships()->with(
+        $query = $this->newQuery()->with(
             is_string($relations) ? func_get_args() : $relations
         );
 
@@ -819,29 +819,8 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function newQuery()
     {
-        return $this->registerGlobalScopes($this->newQueryWithoutScopes());
-    }
+        $builder = $this->newQueryWithoutScopes();
 
-    /**
-     * Get a new query builder with no relationships loaded.
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function newQueryWithoutRelationships()
-    {
-        return $this->registerGlobalScopes(
-            $this->newEloquentBuilder($this->newBaseQueryBuilder())->setModel($this)
-        );
-    }
-
-    /**
-     * Register the global scopes for this builder instance.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function registerGlobalScopes($builder)
-    {
         foreach ($this->getGlobalScopes() as $identifier => $scope) {
             $builder->withGlobalScope($identifier, $scope);
         }
@@ -999,11 +978,9 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return $this;
         }
 
-        $this->setRawAttributes(
-            static::newQueryWithoutScopes()->findOrFail($this->getKey())->attributes
-        );
+        $this->load(array_keys($this->relations));
 
-        $this->load(collect($this->relations)->except('pivot')->keys()->toArray());
+        $this->setRawAttributes(static::findOrFail($this->getKey())->attributes);
 
         return $this;
     }

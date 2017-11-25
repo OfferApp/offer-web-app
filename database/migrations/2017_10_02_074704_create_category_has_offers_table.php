@@ -18,8 +18,6 @@ class CreateCategoryHasOffersTable extends Migration
           $table->integer('offer_id')->unsigned();
           $table->foreign('category_id')->references('id')->on('categories');
           $table->foreign('offer_id')->references('id')->on('offers');
-          $table->timestamps();
-
         });
     }
 
