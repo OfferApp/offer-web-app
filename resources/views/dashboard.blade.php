@@ -66,7 +66,11 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- BEGIN PAGE TITLE -->
                         <div class="page-title">
                             <h1>Vendor
+<<<<<<< Updated upstream
                                 <small>Offer Gallery</small>
+=======
+                                <small>Gallery</small>
+>>>>>>> Stashed changes
                             </h1>
                         </div>
                         <!-- END PAGE TITLE -->
@@ -121,16 +125,23 @@ License: You must have a valid license purchased only from themeforest(the above
                                       </div>
                                       <ul class="cbp-l-project-related-wrap">
                                       @foreach ($offers as $offer)
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                                           <li class="cbp-l-project-related-item">
                                               <a href="ajax-juicy-projects/project1.html" class="cbp-singlePage cbp-l-project-related-link" rel="nofollow">
                                                   <img src="/assets/pages/media/works/{{$offer->offerPic}}" alt="">
                                                   <div class="cbp-l-project-related-title">{{$offer->offerName}}</div>
                                               </a>
                                           </li>
+<<<<<<< Updated upstream
 
                                       @endforeach
 
+=======
+                                      @endforeach
+>>>>>>> Stashed changes
                                       </ul>
 
                                   </div>

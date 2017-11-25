@@ -18,7 +18,7 @@
                 <h3>Sign Up Verification</h3>
                 <p> Hi {{ $user->username }} Please Click on the below button to verify your Account </p>
                 <div class="form-actions">
-                    <button type="submit" id="register-submit-btn" class="btn green pull-right"> <a href="{{ url('vendor_verification/'.$user->id) }}"> verification </a></button>
+                    <button class="btn green pull-right"> <a href="{{route('email_verification', ['id' => $user->id])}}"> verification </a></button>
                 </div>
             <!-- END REGISTRATION FORM -->
         </div>

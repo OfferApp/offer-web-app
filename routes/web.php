@@ -12,6 +12,10 @@ use App\Offer;
 |
 */
 
+Route::get('/map',function(){
+  return view('cornford.googlmapper.circle');
+});
+
 //Logged in users/vendor cannot access or send requests these pages
 Route::group(['middleware' => 'vendor_guest'], function() {
 
@@ -25,7 +29,7 @@ Route::group(['middleware' => 'vendor_guest'], function() {
       ->name('login');
 });
 
-Route::post('vendor_verification/$id', 'VendorAuth\LoginController@verified')
+Route::get('vendor_verification/$id', 'VendorAuth\LoginController@verified')
             ->name('email_verification');
 
 
@@ -38,9 +42,22 @@ Route::group(['middleware' => 'vendor_auth'], function(){
       })->name('logout');
 
       Route::get('/', function(){
-      return view('home');
+        $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
+        $offers = Offer::where('vendor_id',$vendor->id)->get();
+        $bookmarks = [];
+        $customer = new App\Offer;
+        foreach ($offers as $key => $offer) {
+          $bookmark = $customer->customerBookmark($offer->id);
+          if ($bookmark->isNotEmpty()) {
+            $bookmarks[] = $bookmark;
+          }
+
+        }
+
+       return view('home',compact('bookmarks'));
       })->name('home');
 
+<<<<<<< Updated upstream
       Route::get('/vendorprofile', function(){
         $vendor = Vendor::where('user_id', Auth::guard('web_vendor')->user()->id)->first();
         $offers = Offer::where('vendor_id',Auth::guard('web_vendor')->user()->id)
@@ -49,6 +66,9 @@ Route::group(['middleware' => 'vendor_auth'], function(){
     })->name('vendorProfile');
       Route::get('/dashboard', 'VendorAccount\AccountController@index')
       ->name('dashboard');
+=======
+<<<<<<< refs/remotes/origin/master
+>>>>>>> Stashed changes
       Route::get('/newVendorAccount', 'VendorAccount\AccountController@create')
       ->name('setAccount');
       Route::post('/newVendorPersonalInfo', 'VendorAccount\AccountController@setPersonalInfo')
@@ -62,12 +82,50 @@ Route::group(['middleware' => 'vendor_auth'], function(){
 
       Route::get('/newoffer', 'Offer\OfferController@create')->name('setOffer');
       Route::get('/editoffer', 'Offer\OfferController@edit')->name('editOffer');
+<<<<<<< Updated upstream
       Route::post('/editoffer', 'Offer\OfferController@store')->name('storeEdit');
       Route::get('/viewoffer', 'Offer\OfferController@index')->name('viewOffer');
+=======
+      Route::get('/viewoffer', 'Offer\OfferController@edit')->name('viewOffer');
+=======
+      Route::get('/vendorprofile', function(){
+        $vendor = Vendor::where('user_id', Auth::guard('web_vendor')->user()->id)->first();
+        $offers = Offer::where('vendor_id',$vendor->id)->get();
+      return view('vendorprofile',compact(['vendor','offers']));
+    })->name('vendorProfile');
+      Route::get('/dashboard', 'VendorAccount\AccountController@index')
+      ->name('dashboard');
+      // Route::get('/newVendorAccount', 'VendorAccount\AccountController@create')
+      // ->name('setAccount');
+      Route::get('/VendorPersonalInfo', 'VendorAccount\AccountController@PersonalInfo')
+      ->name('PersonalInfo');
+      Route::get('/VendorAvatar', 'VendorAccount\AccountController@Avatar')
+      ->name('Avatar');
+      Route::get('/VendorPassword', 'VendorAccount\AccountController@Password')
+      ->name('Password');
+      Route::get('/VendorLocation', 'VendorAccount\AccountController@Location')
+      ->name('Location');
+
+      Route::post('/VendorPersonalInfo', 'VendorAccount\AccountController@setPersonalInfo')
+      ->name('setPersonalInfo');
+      Route::post('/VendorAvatar', 'VendorAccount\AccountController@setAvatar')
+      ->name('setAvatar');
+      Route::post('/VendorPassword', 'VendorAccount\AccountController@setPassword')
+      ->name('setPassword');
+      Route::post('/VendorLocation', 'VendorAccount\AccountController@setLocation')
+      ->name('setLocation');
+
+      Route::get('/newoffer', 'Offer\OfferController@create')->name('setOffer');
+      Route::get('/editoffer', 'Offer\OfferController@edit')->name('editOffer');
+      Route::post('/newoffer', 'Offer\OfferController@store')->name('storeNew');
+      Route::post('/editoffer', 'Offer\OfferController@update')->name('storeEdit');
+      Route::get('/viewoffer', 'Offer\OfferController@index')->name('viewOffer');
+>>>>>>> Final Update done
+>>>>>>> Stashed changes
       Route::get('/aboutus', 'Offer\OfferController@edit')->name('aboutUs');
       Route::get('/contactus', 'Offer\OfferController@edit')->name('contactUs');
 
-
+      Route::get('/offerdelete', 'Offer\OfferController@destroy' )->name('offerDelete');
 });
 
 

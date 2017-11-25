@@ -1,3 +1,4 @@
+
 <div class="page-header">
     <!-- BEGIN HEADER TOP -->
     <div class="page-header-top">
@@ -305,7 +306,7 @@
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <li class="dropdown dropdown-user dropdown-dark">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <img alt="" class="img-circle" src="../assets/layouts/layout3/img/avatar9.jpg">
+                            <img alt="" class="img-circle" src="{{App\Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first()->vendorLogo}}">
                             <span class="username username-hide-mobile">{{Auth::guard('web_vendor')->user()->username}}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
@@ -391,8 +392,20 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li class=" ">
-                                <a href="{{route('setAccount')}}" class="nav-link ">
-                                    <i class="icon-user"></i> Vendor </a>
+                                <a href="{{route('PersonalInfo')}}" class="nav-link ">
+                                    <i class="icon-user"></i> PersonalInfo </a>
+                            </li>
+                            <li class=" ">
+                                <a href="{{route('Avatar')}}" class="nav-link ">
+                                    <i class="icon-user"></i> Logo </a>
+                            </li>
+                            <li class=" ">
+                                <a href="{{route('Password')}}" class="nav-link ">
+                                    <i class="fa fa-user-secret"></i> Change Password </a>
+                            </li>
+                            <li class=" ">
+                                <a href="{{route('Location')}}" class="nav-link ">
+                                    <i class="fa fa-globe"></i> Set Location </a>
                             </li>
                         </ul>
                     </li>

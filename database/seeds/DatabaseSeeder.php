@@ -21,6 +21,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+<<<<<<< Updated upstream
+=======
+<<<<<<< refs/remotes/origin/master
+    }
+=======
+>>>>>>> Stashed changes
 
         // $this->call(UsersTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS = 0 ');
@@ -36,9 +42,15 @@ class DatabaseSeeder extends Seeder
 
 
         $usersQuantity=20;
+<<<<<<< Updated upstream
         $vendorsQuantity=20;
         $customersQuantity=20;
         $categoriesQuantity=20;
+=======
+        $vendorsQuantity=5;
+        $customersQuantity=15;
+        $categoriesQuantity=5;
+>>>>>>> Stashed changes
         $offersQuantity=20;
         $bookmarksQuantity=20;
         $category_has_offersQuantity=20;
@@ -54,4 +66,8 @@ class DatabaseSeeder extends Seeder
         factory(Category_has_offer::class,$category_has_offersQuantity)->create();
 
           }
+<<<<<<< Updated upstream
+=======
+>>>>>>> Final Update done
+>>>>>>> Stashed changes
 }

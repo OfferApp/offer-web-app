@@ -4,9 +4,20 @@ namespace App\Http\Controllers\Offer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+<<<<<<< Updated upstream
 use App\Offer;
 use Auth;
 use Carbon\Carbon;
+=======
+<<<<<<< refs/remotes/origin/master
+=======
+use App\Http\Requests\offerRequest;
+use App\Offer;
+use App\Vendor;
+use Auth;
+use Carbon\Carbon;
+>>>>>>> Final Update done
+>>>>>>> Stashed changes
 
 class OfferController extends Controller
 {
@@ -17,9 +28,21 @@ class OfferController extends Controller
      */
     public function index()
     {
+<<<<<<< Updated upstream
         $offers = Offer::where('vendor_id',Auth::guard('web_vendor')->user()->id)
                                  ->get();
         return view('offerView',compact('offers'));
+=======
+<<<<<<< refs/remotes/origin/master
+        //
+=======
+        $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
+
+        $offers = Offer::where('vendor_id',$vendor->id)->get();
+        // return $offers;
+        return view('offerView',compact('offers'));
+>>>>>>> Final Update done
+>>>>>>> Stashed changes
     }
 
     /**
@@ -39,8 +62,9 @@ class OfferController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(offerRequest $request)
     {
+<<<<<<< Updated upstream
               $offer = new Offer;
             $offer->offerName = $request['offername'];
             $offer->offerPic = $request['offerimages'];
@@ -52,6 +76,61 @@ class OfferController extends Controller
             $offer->vendor_id = Auth::guard('web_vendor')->user()->id;
             $offer->save();
             return redirect('/');
+=======
+<<<<<<< refs/remotes/origin/master
+
+=======
+             $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
+             if ($request['offername'] == 1) {
+               $offername = 'Buy '.$request['buy'].' get '.$request['get'];
+             }
+             if ($request['offername'] == 2) {
+               $offername = 'Flat '.$request['flat'].' % ';
+             }
+             if ($request['offername'] == 3) {
+               $offername = $request['cashback'].'CashBack On '.$request['purchase'].' and Above Purchases ';
+             }
+             if ($request->hasFile('offerimages')) {
+               $id = $request['id'];
+               $offer = Offer::where('id',$id)->first();
+               if (empty($offer)) {
+                 $offer = new Offer;
+
+               }
+               $file = $request->file('offerimages');
+               $destinationPath = 'assets/pages/media/works';
+               $file->move($destinationPath,$file->getClientOriginalName());
+               $offer->id = $id;
+               $offer->offerName = $request['offername'];
+               $offer->offerPic = $file->getClientOriginalName();
+               $offer->offerDescription = $request['offer_description'];
+               $offer->offerExpiry = Carbon::parse($request->input('offer_expire'));
+               $offer->offerLabel = $request['label'];
+               $offer->category = $request['category'];
+               $offer->offerRating = $request['rating'];
+               $offer->vendor_id = $vendor->id;
+               $offer->save();
+               $msg = "The Offers is Added Sucessfully";
+               $offers = Offer::where('vendor_id',$vendor->id)->get();
+               return view('editOffer',compact(['msg','offers']));
+             } else {
+
+               $offer = new Offer;
+               $offer->offerName = $offername;
+               $offer->offerPic = $request['offerimages'];
+               $offer->offerDescription = $request['offer_description'];
+               $offer->offerExpiry = Carbon::parse($request->input('offer_expire'));
+               $offer->offerLabel = $request['label'];
+               $offer->category = $request['category'];
+               $offer->offerRating = 5;
+               $offer->vendor_id = $vendor->id;
+               $offer->save();
+               $msg = "The Offers is Created Sucessfully";
+
+               return view('createOffer',compact(['msg']));
+             }
+>>>>>>> Final Update done
+>>>>>>> Stashed changes
     }
 
     /**
@@ -73,7 +152,13 @@ class OfferController extends Controller
      */
     public function edit()
     {
-      return view('editOffer');
+
+      $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
+
+      $offers = Offer::where('vendor_id',$vendor->id)->get();
+
+
+      return view('editOffer',compact('offers'));
     }
 
     /**
@@ -83,9 +168,26 @@ class OfferController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+      $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
+      $id = $request['id'];
+      $file = $request->file('avatar');
+      $destinationPath = 'assets/pages/media/works';
+      $file->move($destinationPath,$file->getClientOriginalName());
+      $offer = Offer::where('id',$id)->first();
+      $offer->offerName = $request['offername'];
+      $offer->offerPic = $file->getClientOriginalName();
+      $offer->offerDescription = $request['offer_description'];
+      $offer->offerExpiry = Carbon::parse($request->input('offer_expire'));
+      $offer->offerLabel = $request['label'];
+      $offer->category = $request['category'];
+      $offer->offerRating = $request['rating'];
+      $offer->vendor_id = $vendor->id;
+      $offer->save();
+      $msg = "The Offers is Updated Sucessfully";
+      $offers = Offer::where('vendor_id',$vendor->id)->get();
+      return view('editOffer',compact(['msg','offers']));
     }
 
     /**
@@ -94,8 +196,12 @@ class OfferController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+         Offer::where('id',$request['id'])->delete();
+         $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
+         $msg = "The Offers is Deleted Sucessfully";
+         $offers = Offer::where('vendor_id',$vendor->id)->get();
+         return view('editOffer',compact(['msg','offers']));
     }
 }

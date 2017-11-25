@@ -16,12 +16,20 @@ var TableDatatablesEditable = function () {
         function editRow(oTable, nRow) {
             var aData = oTable.fnGetData(nRow);
             var jqTds = $('>td', nRow);
-            jqTds[0].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[0] + '">';
-            jqTds[1].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[1] + '">';
-            jqTds[2].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[2] + '">';
-            jqTds[3].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[3] + '">';
-            jqTds[4].innerHTML = '<a class="edit" href="">Save</a>';
-            jqTds[5].innerHTML = '<a class="cancel" href="">Cancel</a>';
+            jqTds[0].innerHTML = '<input  type="text" class="form-control input-small" required name="id" value="' + aData[0] + '">';
+            jqTds[1].innerHTML = '<input  type="text" class="form-control input-small" required name="offername" value="' + aData[1] + '">';
+            jqTds[2].innerHTML = '<input type="text" class="form-control input-small" required name="category" value="' + aData[2] + '">';
+            jqTds[3].innerHTML = '<div>'+
+                    '<span class="btn default btn-file">'+
+                        '<span class="fileinput-new "><button class="btn btn-sm btn-success "><i class="fa fa-check"></i> Select image </button>  </span>'+
+                        '<input type="file" name="offerimages" required > </span>'+
+                '</div>';
+            jqTds[4].innerHTML = '<input  size="15" type="text" class="form-control input-small" required name="offer_description" value="' + aData[4] + '">';
+            jqTds[5].innerHTML = '<input  type="text" class="form-control input-small" required name="offer_expire" value="' + aData[5] + '">';
+            jqTds[6].innerHTML = '<input  type="text" class="form-control input-small" required name="rating" value="' + aData[6] + '">';
+            jqTds[7].innerHTML = '<input  type="text" class="form-control input-small" name="label" required value="' + aData[7] + '">';
+            jqTds[8].innerHTML = '<button  class="btn btn-sm btn-success table-group-action-submit"><i class="fa fa-check"></i> Save </button>';
+            jqTds[9].innerHTML = '<button class="cancel btn btn-sm btn-warning "><i class="fa fa-remove"></i> Cancel </button>';
         }
 
         function saveRow(oTable, nRow) {
@@ -30,8 +38,12 @@ var TableDatatablesEditable = function () {
             oTable.fnUpdate(jqInputs[1].value, nRow, 1, false);
             oTable.fnUpdate(jqInputs[2].value, nRow, 2, false);
             oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
-            oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 4, false);
-            oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 5, false);
+            oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
+            oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
+            oTable.fnUpdate(jqInputs[6].value, nRow, 6, false);
+            oTable.fnUpdate(jqInputs[7].value, nRow, 7, false);
+            oTable.fnUpdate('<button class="edit btn btn-sm btn-success "><i class="fa fa-edit"></i> Edit </button>', nRow, 8, false);
+            oTable.fnUpdate('<button class="delete btn btn-sm btn-danger "><i class="fa fa-remove"></i> <a> Deleted </a> </button>', nRow, 9, false);
             oTable.fnDraw();
         }
 
@@ -41,7 +53,11 @@ var TableDatatablesEditable = function () {
             oTable.fnUpdate(jqInputs[1].value, nRow, 1, false);
             oTable.fnUpdate(jqInputs[2].value, nRow, 2, false);
             oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
-            oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 4, false);
+            oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
+            oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
+            oTable.fnUpdate(jqInputs[6].value, nRow, 6, false);
+            oTable.fnUpdate(jqInputs[7].value, nRow, 7, false);
+            oTable.fnUpdate('<button class="edit btn btn-sm btn-success "><i class="fa fa-edit"></i> Edit </button>', nRow, 8, false);
             oTable.fnDraw();
         }
 
@@ -50,8 +66,8 @@ var TableDatatablesEditable = function () {
         var oTable = table.dataTable({
 
             // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
-            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js). 
-            // So when dropdowns used the scrollable div should be removed. 
+            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
+            // So when dropdowns used the scrollable div should be removed.
             //"dom": "<'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
 
             "lengthMenu": [
@@ -101,12 +117,12 @@ var TableDatatablesEditable = function () {
                     oTable.fnDeleteRow(nEditing); // cancel
                     nEditing = null;
                     nNew = false;
-                    
+
                     return;
                 }
             }
 
-            var aiNew = oTable.fnAddData(['', '', '', '', '', '']);
+            var aiNew = oTable.fnAddData(['', '', '', '', '', '','','','','']);
             var nRow = oTable.fnGetNodes(aiNew[0]);
             editRow(oTable, nRow);
             nEditing = nRow;
@@ -140,7 +156,7 @@ var TableDatatablesEditable = function () {
         table.on('click', '.edit', function (e) {
             e.preventDefault();
             nNew = false;
-            
+
             /* Get the row as a parent of the link that was clicked on */
             var nRow = $(this).parents('tr')[0];
 

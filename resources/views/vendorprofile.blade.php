@@ -4,6 +4,7 @@
     <div class="cbp-slider">
         <ul class="cbp-slider-wrap">
             <li class="cbp-slider-item">
+<<<<<<< Updated upstream
                 <a href="../assets/global/img/portfolio/1200x900/13.jpg" class="cbp-lightbox">
                     <img src="../assets/global/img/portfolio/1200x900/13.jpg" alt=""> </a>
             </li>
@@ -14,6 +15,10 @@
             <li class="cbp-slider-item">
                 <a href="../assets/global/img/portfolio/1200x900/01.jpg" class="cbp-lightbox">
                     <img src="../assets/global/img/portfolio/1200x900/01.jpg" alt=""> </a>
+=======
+                <a href="{{$vendor->vendorLogo}}" class="cbp-lightbox">
+                    <img src="{{$vendor->vendorLogo}}" alt=""> </a>
+>>>>>>> Stashed changes
             </li>
         </ul>
     </div>
@@ -28,7 +33,11 @@
         </div>
         <div class="cbp-l-project-details">
             <div class="cbp-l-project-details-title">
+<<<<<<< Updated upstream
                 <span>Project Details</span>
+=======
+                <span>Vendor Details</span>
+>>>>>>> Stashed changes
             </div>
             <ul class="cbp-l-project-details-list">
                 <li>
@@ -55,6 +64,10 @@
                         <div class="cbp-l-project-related-title">{{$offer->offerName}}</div>
                     </a>
                 </li>
+<<<<<<< Updated upstream
+=======
+                
+>>>>>>> Stashed changes
 
             @endforeach
 
