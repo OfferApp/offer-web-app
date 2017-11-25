@@ -18,13 +18,14 @@ class RedirectIfVendorAuthenticated
    {
        //If request comes from logged in customer, he will
        //be redirect to home page.
-       if (Auth::guard()->check()) {
+
+       if (Auth::guard()->check() && Auth::guard()->user()->role_id == 2 ) {
            return redirect('/customer_home');
        }
 
        //If request comes from logged in vendor, he will
        //be redirected to vendor's home page.
-       if (Auth::guard('web_vendor')->check()) {
+       if (Auth::guard('web_vendor')->check() && Auth::guard('web_vendor')->user()->role_id == 1 ) {
            return redirect('/');
        }
        return $next($request);

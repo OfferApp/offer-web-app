@@ -18,6 +18,7 @@ class CreateBookmarksTable extends Migration
             $table->integer('offer_id')->unsigned();
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->foreign('offer_id')->references('id')->on('offers');
+            $table->timestamps();
           });
     }
 

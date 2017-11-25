@@ -21,5 +21,5 @@ Route::post('customerlogin', 'API\CustomerController@login');
 Route::post('customerregister', 'API\CustomerController@register');
 
 Route::group(['middleware' => 'auth:api'], function(){
-Route::post('details', 'API\CustomerController@details');
+Route::get('customerdetails', 'API\CustomerController@details');
 });

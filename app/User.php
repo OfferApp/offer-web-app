@@ -11,6 +11,9 @@ class User extends Authenticatable
 {
   use HasApiTokens, Notifiable;
 
+  const VERIFIED_USER = 'true';
+  const UNVERIFIED_USER = 'false';
+
     protected $fillable = [
       'username',
       'email',

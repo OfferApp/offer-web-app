@@ -22,6 +22,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <head>
         <meta charset="utf-8" />
         <title>OFFER APP | New Vendor Profile | Account</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -157,14 +158,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="uppercase profile-stat-title"> 37 </div>
                                                     <div class="uppercase profile-stat-text"> Offer </div>
                                                 </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                                <!-- <div class="col-md-4 col-sm-4 col-xs-6">
                                                     <div class="uppercase profile-stat-title"> 51 </div>
                                                     <div class="uppercase profile-stat-text"> Tasks </div>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4 col-xs-6">
                                                     <div class="uppercase profile-stat-title"> 61 </div>
                                                     <div class="uppercase profile-stat-text"> Uploads </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <!-- END STAT -->
                                             <div>
@@ -216,45 +217,49 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="tab-content">
                                                             <!-- PERSONAL INFO TAB -->
                                                             <div class="tab-pane active" id="tab_1_1">
-                                                                <form role="form" action="#">
+                                                                <form role="form" action="{{route('setPersonalInfo')}}" method="post">
+                                                                    {{csrf_field()}}
                                                                     <div class="form-group">
                                                                         <label class="control-label">First Name</label>
-                                                                        <input type="text" placeholder="John" class="form-control" /> </div>
+                                                                        <input type="text" placeholder="John" name="firstName"class="form-control" /> </div>
                                                                     <div class="form-group">
-                                                                        <label class="control-label">Last Name</label>
-                                                                        <input type="text" placeholder="Doe" class="form-control" /> </div>
+                                                                        <label class="control-label">Shop Name</label>
+                                                                        <input type="text" placeholder="ShopName" name="shopName"class="form-control" /> </div>
                                                                     <div class="form-group">
                                                                         <label class="control-label">Shop Contact Number</label>
-                                                                        <input type="text" placeholder="+91 646 580 DEMO (6284)" class="form-control" /> </div>
+                                                                        <input type="text" placeholder="+91 646 580 DEMO (6284)" name="mobileNo" class="form-control" /> </div>
 
                                                                     <div class="form-group">
                                                                         <label class="control-label">Occupation</label>
-                                                                        <input type="text" placeholder="Local Shopkepper" class="form-control" /> </div>
+                                                                        <input type="text" placeholder="Local Shopkepper" name="occupation"class="form-control" /> </div>
                                                                     <div class="form-group">
                                                                         <label class="control-label">Address</label>
-                                                                        <textarea class="form-control" rows="3" placeholder="Shop Address"></textarea>
+                                                                        <textarea class="form-control" rows="3" name="address" placeholder="Shop Address"></textarea>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label class="control-label">Website Url</label>
-                                                                        <input type="text" placeholder="http://www.mywebsite.com" class="form-control" /> </div>
+                                                                        <input type="text" placeholder="http://www.mywebsite.com" name="website" class="form-control" /> </div>
                                                                     <div class="margiv-top-10">
-                                                                        <a href="javascript:;" class="btn green"> Save Changes </a>
-                                                                        <a href="javascript:;" class="btn default"> Cancel </a>
+                                                                      <button type="submit" class="btn green "> Submit </button>
+                                                                      <button type="reset" class="btn green "> Cancel </button>
+
                                                                     </div>
                                                                 </form>
                                                             </div>
                                                             <!-- END PERSONAL INFO TAB -->
                                                             <!-- CHANGE AVATAR TAB -->
-                                                            <div class="tab-pane" id="tab_1_2">
-                                                                <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                             <div class="tab-pane" id="tab_1_2">
+                                                                <!--<p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
                                                                     laborum eiusmod. </p>
-                                                                    <form action="{{route('uploadFile')}}" method="post" enctype="multipart/form-data"class="dropzone dropzone-file-area" id="my-dropzone" style="width: 500px; margin-top: 50px;">
+                                                                    <form action="{{route('setAvatar')}}" method="post" enctype="multipart/form-data" class="dropzone" id="my-awesome-dropzone" style="width: 500px; margin-top: 50px;">
                                                                         {{ csrf_field() }}
                                                                         <h3 class="sbold">Drop files here or click to upload</h3>
+                                                                        <input type="file" name="avatar">
                                                                         <p> This is just a demo dropzone. Selected files are not actually uploaded. </p>
                                                                         <div class="margin-top-10">
-                                                                            <a href="javascript:;" class="btn green"> Submit </a>
-                                                                            <a href="javascript:;" class="btn default"> Cancel </a>
+                                                                          <button type="submit" class="btn default"> Save Changes </button>
+                                                                          <button type="reset" class="btn default"> Cancel </button>
+
                                                                         </div>
                                                                         @if ($errors)
                                                                           <span class="help-block alert-danger">
@@ -266,8 +271,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                         </span>
                                                                         @endif
 
-                                                                    </form>
-                                                                <!-- <form action="#" role="form">
+                                                                    </form> -->
+                                                                <form action="{{route('setAvatar')}}" method="post" enctype="multipart/form-data" role="form">
+                                                                      {{ csrf_field() }}
                                                                     <div class="form-group">
                                                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                                                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
@@ -277,37 +283,34 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                                 <span class="btn default btn-file">
                                                                                     <span class="fileinput-new"> Select image </span>
                                                                                     <span class="fileinput-exists"> Change </span>
-                                                                                    <input type="file" name="..."> </span>
+                                                                                    <input type="file" name="avatar"> </span>
                                                                                 <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="clearfix margin-top-10">
-                                                                            <span class="label label-danger">NOTE! </span>
-                                                                            <span>Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
-                                                                        </div>
                                                                     </div>
                                                                     <div class="margin-top-10">
-                                                                        <a href="javascript:;" class="btn green"> Submit </a>
-                                                                        <a href="javascript:;" class="btn default"> Cancel </a>
+                                                                        <button type="submit" class="btn green "> Submit </button>
+                                                                        <button type="reset" class="btn green "> Cancel </button>
                                                                     </div>
-                                                                </form> -->
+                                                                </form>
                                                             </div>
                                                             <!-- END CHANGE AVATAR TAB -->
                                                             <!-- CHANGE PASSWORD TAB -->
                                                             <div class="tab-pane" id="tab_1_3">
-                                                                <form action="#">
+                                                                <form action="{{route('setPassword')}}" method="post">
+                                                                  {{ csrf_field() }}
                                                                     <div class="form-group">
                                                                         <label class="control-label">Current Password</label>
-                                                                        <input type="password" class="form-control" /> </div>
+                                                                        <input type="password" name="currentPassword"class="form-control" /> </div>
                                                                     <div class="form-group">
                                                                         <label class="control-label">New Password</label>
-                                                                        <input type="password" class="form-control" /> </div>
+                                                                        <input type="password" name="newPassword" class="form-control" /> </div>
                                                                     <div class="form-group">
                                                                         <label class="control-label">Re-type New Password</label>
-                                                                        <input type="password" class="form-control" /> </div>
+                                                                        <input type="password" name="confirmPassword" class="form-control" /> </div>
                                                                     <div class="margin-top-10">
-                                                                        <a href="javascript:;" class="btn green"> Change Password </a>
-                                                                        <a href="javascript:;" class="btn default"> Cancel </a>
+                                                                      <button type="submit" class="btn green "> Change Password </button>
+                                                                      <button type="reset" class="btn green "> Cancel </button>
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -318,9 +321,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                   <div class="portlet-title">
                                                                       <div class="caption">
                                                                           <i class=" icon-layers font-green"></i>
-                                                                          <span class="caption-subject font-green bold uppercase">Geocoding</span>
+                                                                          <span class="caption-subject font-green bold uppercase">Loaction</span>
                                                                       </div>
-                                                                      <div class="actions">
+                                                                      <!-- <div class="actions">
                                                                           <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
                                                                               <i class="icon-cloud-upload"></i>
                                                                           </a>
@@ -330,20 +333,23 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                           <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
                                                                               <i class="icon-trash"></i>
                                                                           </a>
-                                                                      </div>
+                                                                      </div> -->
                                                                   </div>
                                                                   <div class="portlet-body">
-                                                                      <form class="form-inline margin-bottom-10" action="#">
+                                                                      <form class="form-inline margin-bottom-10" action="{{route('setLocation')}}" method="post">
                                                                         {{ csrf_field() }}
                                                                           <div class="input-group">
-                                                                              <input type="text" class="form-control" id="gmap_geocoding_address" placeholder="address...">
+                                                                              <input type="text" class="form-control" name="address" id="gmap_geocoding_address" placeholder="address...">
                                                                               <span class="input-group-btn">
                                                                                   <button class="btn blue" id="gmap_geocoding_btn">
                                                                                       <i class="fa fa-search"></i>
                                                                               </span>
                                                                           </div>
                                                                       </form>
-                                                                      <div id="gmap_geocoding" class="gmaps"> </div>
+                                                                      <div  class="gmaps">
+                                                                          {!! Mapper::render(0) !!}
+                                                                      </div>
+
                                                                   </div>
                                                               </div>
                                                             </div>
@@ -382,6 +388,19 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="../assets/global/plugins/excanvas.min.js"></script>
 <![endif]-->
         <!-- BEGIN CORE PLUGINS -->
+          <!-- <script>
+          function initMap() {
+            var uluru = {lat: -25.363, lng: 131.044};
+            var map = new google.maps.Map(document.getElementById('gmap_geocoding'), {
+              zoom: 4,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+          }
+        </script> -->
         <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
         <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
@@ -408,14 +427,14 @@ License: You must have a valid license purchased only from themeforest(the above
 
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <script src="../assets/global/plugins/dropzone/dropzone.min.js" type="text/javascript"></script>
+        <script src="../js/dropzone.js" type="text/javascript"></script>
+
         <!-- END PAGE LEVEL PLUGINS -->
 
         <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-        <script src="../assets/global/plugins/gmaps/gmaps.min.js" type="text/javascript"></script>
+        <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtqWsq5Ai3GYv6dSa6311tZiYKlbYT4mw" type="text/javascript"></script> -->
         <!-- END PAGE LEVEL PLUGINS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="../assets/pages/scripts/maps-google.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
         <script src="../assets/pages/scripts/form-dropzone.min.js" type="text/javascript"></script>

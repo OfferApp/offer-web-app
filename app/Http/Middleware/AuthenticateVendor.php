@@ -18,9 +18,10 @@ class AuthenticateVendor
     {
         //If request does not comes from logged in vendor
         //then he shall be redirected to Vendor Login page
-        if (! Auth::guard('web_vendor')->check()) {
-            return redirect('/vendor_login');
+        if (Auth::guard('web_vendor')->check() && Auth::guard('web_vendor')->user()->role_id == 1) {
+          return $next($request);
         }
-        return $next($request);
+        return redirect('/vendor_login');
+
     }
 }

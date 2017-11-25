@@ -51,7 +51,7 @@ public function showRegistrationForm()
     //Create a new vendor instance after a validation.
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'username' => $data['username'],
             'email' => $data['email'],
@@ -60,6 +60,12 @@ public function showRegistrationForm()
             'role_id' => '1',
             'password' => bcrypt($data['password']),
         ]);
+
+        // $vendor = Vendor::create([
+        //
+        // ]);
+        // return $user;
+
     }
 
     protected function guard()

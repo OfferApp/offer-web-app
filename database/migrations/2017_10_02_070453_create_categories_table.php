@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('hotelSet');
             $table->integer('vendor_id')->unsigned();
             $table->foreign('vendor_id')->references('id')->on('vendors');
+            $table->timestamps();
 
         });
     }

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Offer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Offer;
+use Auth;
+use Carbon\Carbon;
 
 class OfferController extends Controller
 {
@@ -14,7 +17,9 @@ class OfferController extends Controller
      */
     public function index()
     {
-        //
+        $offers = Offer::where('vendor_id',Auth::guard('web_vendor')->user()->id)
+                                 ->get();
+        return view('offerView',compact('offers'));
     }
 
     /**
@@ -36,7 +41,17 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-
+              $offer = new Offer;
+            $offer->offerName = $request['offername'];
+            $offer->offerPic = $request['offerimages'];
+            $offer->offerDescription = $request['offer_description'];
+            $offer->offerExpiry = Carbon::parse($request->input('offer_expire'));
+            $offer->offerLabel = $request['label'];
+            $offer->category = $request->offer['categories'][0];
+            $offer->offerRating = 5;
+            $offer->vendor_id = Auth::guard('web_vendor')->user()->id;
+            $offer->save();
+            return redirect('/');
     }
 
     /**
