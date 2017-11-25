@@ -66,11 +66,15 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- BEGIN PAGE TITLE -->
                         <div class="page-title">
                             <h1>Vendor
+<<<<<<< master
 <<<<<<< Updated upstream
                                 <small>Offer Gallery</small>
 =======
                                 <small>Gallery</small>
 >>>>>>> Stashed changes
+=======
+                                <small>Gallery</small>
+>>>>>>> Finale Update done
                             </h1>
                         </div>
                         <!-- END PAGE TITLE -->
@@ -125,16 +129,20 @@ License: You must have a valid license purchased only from themeforest(the above
                                       </div>
                                       <ul class="cbp-l-project-related-wrap">
                                       @foreach ($offers as $offer)
+<<<<<<< master
 <<<<<<< Updated upstream
 
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Finale Update done
                                           <li class="cbp-l-project-related-item">
                                               <a href="ajax-juicy-projects/project1.html" class="cbp-singlePage cbp-l-project-related-link" rel="nofollow">
                                                   <img src="/assets/pages/media/works/{{$offer->offerPic}}" alt="">
                                                   <div class="cbp-l-project-related-title">{{$offer->offerName}}</div>
                                               </a>
                                           </li>
+<<<<<<< master
 <<<<<<< Updated upstream
 
                                       @endforeach
@@ -142,6 +150,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                       @endforeach
 >>>>>>> Stashed changes
+=======
+                                      @endforeach
+>>>>>>> Finale Update done
                                       </ul>
 
                                   </div>

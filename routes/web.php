@@ -60,30 +60,49 @@ Route::group(['middleware' => 'vendor_auth'], function(){
 <<<<<<< Updated upstream
       Route::get('/vendorprofile', function(){
         $vendor = Vendor::where('user_id', Auth::guard('web_vendor')->user()->id)->first();
-        $offers = Offer::where('vendor_id',Auth::guard('web_vendor')->user()->id)
-                                 ->get();
+        $offers = Offer::where('vendor_id',$vendor->id)->get();
       return view('vendorprofile',compact(['vendor','offers']));
     })->name('vendorProfile');
       Route::get('/dashboard', 'VendorAccount\AccountController@index')
       ->name('dashboard');
+<<<<<<< master
 =======
 <<<<<<< refs/remotes/origin/master
 >>>>>>> Stashed changes
       Route::get('/newVendorAccount', 'VendorAccount\AccountController@create')
       ->name('setAccount');
       Route::post('/newVendorPersonalInfo', 'VendorAccount\AccountController@setPersonalInfo')
+=======
+      // Route::get('/newVendorAccount', 'VendorAccount\AccountController@create')
+      // ->name('setAccount');
+      Route::get('/VendorPersonalInfo', 'VendorAccount\AccountController@PersonalInfo')
+      ->name('PersonalInfo');
+      Route::get('/VendorAvatar', 'VendorAccount\AccountController@Avatar')
+      ->name('Avatar');
+      Route::get('/VendorPassword', 'VendorAccount\AccountController@Password')
+      ->name('Password');
+      Route::get('/VendorLocation', 'VendorAccount\AccountController@Location')
+      ->name('Location');
+
+      Route::post('/VendorPersonalInfo', 'VendorAccount\AccountController@setPersonalInfo')
+>>>>>>> Finale Update done
       ->name('setPersonalInfo');
-      Route::post('/newVendorAvatar', 'VendorAccount\AccountController@setAvatar')
+      Route::post('/VendorAvatar', 'VendorAccount\AccountController@setAvatar')
       ->name('setAvatar');
-      Route::post('/newVendorPassword', 'VendorAccount\AccountController@setPassword')
+      Route::post('/VendorPassword', 'VendorAccount\AccountController@setPassword')
       ->name('setPassword');
-      Route::post('/newVendorLocation', 'VendorAccount\AccountController@setLocation')
+      Route::post('/VendorLocation', 'VendorAccount\AccountController@setLocation')
       ->name('setLocation');
 
       Route::get('/newoffer', 'Offer\OfferController@create')->name('setOffer');
       Route::get('/editoffer', 'Offer\OfferController@edit')->name('editOffer');
+<<<<<<< master
 <<<<<<< Updated upstream
       Route::post('/editoffer', 'Offer\OfferController@store')->name('storeEdit');
+=======
+      Route::post('/newoffer', 'Offer\OfferController@store')->name('storeNew');
+      Route::post('/editoffer', 'Offer\OfferController@update')->name('storeEdit');
+>>>>>>> Finale Update done
       Route::get('/viewoffer', 'Offer\OfferController@index')->name('viewOffer');
 =======
       Route::get('/viewoffer', 'Offer\OfferController@edit')->name('viewOffer');

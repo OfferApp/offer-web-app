@@ -93,11 +93,15 @@ return [
     | location.
     |
     */
+<<<<<<< master
 <<<<<<< Updated upstream
     'locate' => false,
 =======
     'locate' => true,
 >>>>>>> Stashed changes
+=======
+    'locate' => true,
+>>>>>>> Finale Update done
 
     /*
     |--------------------------------------------------------------------------
@@ -107,11 +111,15 @@ return [
     | The default zoom level Googlmapper should use.
     |
     */
+<<<<<<< master
 <<<<<<< Updated upstream
     'zoom' => 13,
 =======
     'zoom' => 18,
 >>>>>>> Stashed changes
+=======
+    'zoom' => 18,
+>>>>>>> Finale Update done
 
     /*
     |--------------------------------------------------------------------------
@@ -231,11 +239,15 @@ return [
         | Display an animation effect for markers. (NONE|DROP|BOUNCE)
         |
         */
+<<<<<<< master
 <<<<<<< Updated upstream
         'animation' => 'NONE',
 =======
         'animation' => 'DROP',
 >>>>>>> Stashed changes
+=======
+        'animation' => 'DROP',
+>>>>>>> Finale Update done
 
     ],
 

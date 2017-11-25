@@ -77,6 +77,7 @@ public function showRegistrationForm()
     //Create a new vendor instance after a validation.
     protected function create(array $data)
     {
+<<<<<<< master
 <<<<<<< Updated upstream
         $user = User::create([
 =======
@@ -85,6 +86,8 @@ public function showRegistrationForm()
 >>>>>>> Stashed changes
             'name' => $data['name'],
 =======
+=======
+>>>>>>> Finale Update done
         $type = $data['type'];
         if ($type == 'vendor') {
           $role_id = '1';
@@ -94,7 +97,10 @@ public function showRegistrationForm()
           $role_id = '2';
         }
         $user =  User::create([
+<<<<<<< master
 >>>>>>> Final Update done
+=======
+>>>>>>> Finale Update done
             'username' => $data['username'],
             'email' => $data['email'],
             'mobile' => $data['mobile_no'],
@@ -104,10 +110,30 @@ public function showRegistrationForm()
         ]);
 <<<<<<< Updated upstream
 
-        // $vendor = Vendor::create([
-        //
-        // ]);
-        // return $user;
+          if ($type == 'vendor')
+          {
+            $vendor = Vendor::create([
+              'fullName' => $data['name'],
+              'shopName' => $data['shopName'],
+              'shopAddress' => $data['address'],
+              'shopContactNo' => $data['mobileNo'],
+              'website' => $data['website'],
+              'xCoordinate' => '18.23',
+              'yCoordinate' => '17.85',
+              'zipCode' => $data['zipcode'],
+              'vendorLogo' => '/Upload/images/profile-picture.png',
+              'user_id' => $user->id,
+            ]);
+          }
+          else if ($type == 'customer')
+          {
+            $customer = Customer::create([
+              'fullName' => $data['name'],
+              'profilePicture' => '/Upload/images/profile-picture.png',
+              'user_id' => $user->id,
+            ]);
+          }
+        return $user;
 
 =======
 <<<<<<< refs/remotes/origin/master

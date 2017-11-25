@@ -4,8 +4,13 @@ namespace App\Http\Controllers\Offer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+<<<<<<< master
 <<<<<<< Updated upstream
+=======
+use App\Http\Requests\offerRequest;
+>>>>>>> Finale Update done
 use App\Offer;
+use App\Vendor;
 use Auth;
 use Carbon\Carbon;
 =======
@@ -28,9 +33,16 @@ class OfferController extends Controller
      */
     public function index()
     {
+<<<<<<< master
 <<<<<<< Updated upstream
         $offers = Offer::where('vendor_id',Auth::guard('web_vendor')->user()->id)
                                  ->get();
+=======
+        $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
+
+        $offers = Offer::where('vendor_id',$vendor->id)->get();
+        // return $offers;
+>>>>>>> Finale Update done
         return view('offerView',compact('offers'));
 =======
 <<<<<<< refs/remotes/origin/master
@@ -64,6 +76,7 @@ class OfferController extends Controller
      */
     public function store(offerRequest $request)
     {
+<<<<<<< master
 <<<<<<< Updated upstream
               $offer = new Offer;
             $offer->offerName = $request['offername'];
@@ -80,6 +93,8 @@ class OfferController extends Controller
 <<<<<<< refs/remotes/origin/master
 
 =======
+=======
+>>>>>>> Finale Update done
              $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
              if ($request['offername'] == 1) {
                $offername = 'Buy '.$request['buy'].' get '.$request['get'];
@@ -129,8 +144,11 @@ class OfferController extends Controller
 
                return view('createOffer',compact(['msg']));
              }
+<<<<<<< master
 >>>>>>> Final Update done
 >>>>>>> Stashed changes
+=======
+>>>>>>> Finale Update done
     }
 
     /**
