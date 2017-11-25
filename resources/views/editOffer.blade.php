@@ -102,6 +102,26 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                     @endif
                                     @if($errors->has('offerimages'))
+<<<<<<< HEAD
+<<<<<<< master
+=======
+>>>>>>> gui
+                                    <div class="note note-danger">
+                                        <p>{{$errors->first('offerimages')}}</p>
+                                    </div>
+                                    @endif
+                                    @if($errors->has('category'))
+                                    <div class="note note-danger">
+                                        <p>{{$errors->first('category')}}</p>
+                                    </div>
+                                    @endif
+                                    @if($errors->has('label'))
+<<<<<<< HEAD
+                                    <div class="note note-danger">
+                                        <p>{{$errors->first('label')}}</p>
+                                    </div>
+                                    @endif
+=======
                                     <div class="note note-danger">
                                         <p>{{$errors->first('offerimages')}}</p>
                                     </div>
@@ -116,6 +136,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <p>{{$errors->first('label')}}</p>
                                     </div>
                                     @endif
+>>>>>>> Final Update done
+=======
+                                    <div class="note note-danger">
+                                        <p>{{$errors->first('label')}}</p>
+                                    </div>
+                                    @endif
+>>>>>>> gui
 
 
                                     <!-- Begin: life time stats -->
@@ -132,6 +159,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <button class="btn btn-sm btn-success table-group-action-submit">
                                                         <i class="fa fa-check"></i> Submit</button>
                                                 </div>
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< refs/remotes/origin/master
                                                 <table class="table table-striped table-bordered table-hover table-checkable" id="datatable_products">
                                                     <thead>
@@ -151,32 +181,32 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <th width="10%"> Actions </th>
                                                         </tr>
                                                       <form  action="{{route('storeEdit')}}" method="post">
+=======
+                                                <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
+>>>>>>> Finale Update done
+=======
+                                                <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
+>>>>>>> Final Update done
+=======
+                                                <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
+>>>>>>> gui
                                                             {{csrf_field()}}
-                                                        <tr role="row" class="filter">
-                                                            <td> </td>
-                                                            <td>
-                                                                <input type="text" class="form-control form-filter input-sm" name="product_id"> </td>
-                                                            <td>
-                                                                <input type="text" class="form-control form-filter input-sm" name="product_name"> </td>
-                                                            <td>
-                                                                <select name="product_category" class="form-control form-filter input-sm">
-                                                                    <option value="">Select...</option>
-                                                                    <option value="1">Footwear</option>
-                                                                    <option value="2">Clothing</option>
-                                                                    <option value="3">Accessories</option>
-                                                                    <option value="4">Food</option>
-                                                                </select>
-                                                            </td>
-
-                                                            <td>
-                                                              <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-                                                                  <input type="text" class="form-control form-filter input-sm" readonly name="product_created_from" placeholder="From">
-                                                                  <span class="input-group-btn">
-                                                                      <button class="btn btn-sm default" type="button">
-                                                                          <i class="fa fa-calendar"></i>
-                                                                      </button>
-                                                                  </span>
+                                                  <div class="portlet light portlet-fit ">
+                                                      <div class="portlet-title">
+                                                          <div class="caption">
+                                                              <i class="fa fa-cart-plus font-red"></i>
+                                                              <span class="caption-subject font-red sbold uppercase">Edit Offer</span>
+                                                          </div>
+                                                          <div class="actions">
+                                                              <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                                                  <label class="btn btn-transparent red btn-outline btn-circle btn-sm active">
+                                                                      <input type="radio" name="options" class="toggle" id="option1">Actions</label>
+                                                                  <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
+                                                                      <input type="radio" name="options" class="toggle" id="option2">Settings</label>
                                                               </div>
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
                                                                 <td>
                                                                     <input type="text" class="form-control form-filter input-sm" name="product_description"> </td>
                                                             <td>
@@ -216,6 +246,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                   <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
                                                                       <input type="radio" name="options" class="toggle" id="option2">Settings</label>
                                                               </div>
+=======
+>>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
                                                           </div>
                                                       </div>
                                                       <div class="portlet-body">
@@ -289,7 +325,16 @@ License: You must have a valid license purchased only from themeforest(the above
                                                       </div>
                                                   </div>
                                                 </form>
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 >>>>>>> Final Update done
+=======
+>>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
                                             </div>
                                         </div>
                                     <!-- End: life time stats -->

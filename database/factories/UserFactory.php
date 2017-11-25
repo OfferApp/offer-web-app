@@ -53,22 +53,46 @@ $factory->define(App\Vendor::class, function (Faker $faker) {
     return [
         'fullName' => $faker->name,
         'shopName' => $faker->word,
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
         'vendorLogo' => $faker->image('/assets/global/img/portfolio/400x300',400,300),
 =======
         'vendorLogo' => $faker->image('public/assets/global/img/portfolio/400x300',400,300),
 >>>>>>> Stashed changes
+=======
+        'vendorLogo' => $faker->image('public/assets/global/img/portfolio/400x300',400,300),
+>>>>>>> Finale Update done
+=======
+        'vendorLogo' => $faker->image('public/assets/global/img/portfolio/400x300',400,300),
+>>>>>>> Final Update done
+=======
+        'vendorLogo' => $faker->image('public/assets/global/img/portfolio/400x300',400,300),
+>>>>>>> gui
         'shopAddress' => $faker->streetAddress,
         'shopContactNo' => $faker->phoneNumber,
         'website' => $faker->url,
         'xCoordinate' => $faker->latitude($min = -90, $max = 90),     // 77.147489
         'yCoordinate'=> $faker->longitude($min = -180, $max = 180),  // 86.211205
         'zipCode'=> $faker->postcode,
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
         'user_id'=> $faker->unique()->numberBetween($min = 1, $max = 20),
 =======
         'user_id'=> $faker->unique()->numberBetween(1, App\User::count()),
 >>>>>>> Stashed changes
+=======
+        'user_id'=> $faker->unique()->numberBetween(1, App\User::count()),
+>>>>>>> Finale Update done
+=======
+        'user_id'=> $faker->unique()->numberBetween(1, App\User::count()),
+>>>>>>> Final Update done
+=======
+        'user_id'=> $faker->unique()->numberBetween(1, App\User::count()),
+>>>>>>> gui
         'created_at' => Carbon::now(),
         'updated_at' => Carbon::now(),
 
@@ -80,6 +104,9 @@ $factory->define(App\Customer::class, function (Faker $faker) {
 
     return [
         'fullName' => $faker->name,
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
         'profilePicture' => $faker->image('public/Upload/images',400,300),
         'user_id'=> $faker->numberBetween($min = 1, $max = 20),
@@ -87,37 +114,88 @@ $factory->define(App\Customer::class, function (Faker $faker) {
         'profilePicture' => $faker->randomElement(['user1-128x128.jpg','user3-128x128.jpg','user4-128x128.jpg','user5-128x128.jpg','user6-128x128.jpg','user7-128x128.jpg','user8-128x128.jpg']),
         'user_id'=> $faker->unique()->numberBetween(1, App\User::count()),
 >>>>>>> Stashed changes
+=======
+        'profilePicture' => $faker->randomElement(['user1-128x128.jpg','user3-128x128.jpg','user4-128x128.jpg','user5-128x128.jpg','user6-128x128.jpg','user7-128x128.jpg','user8-128x128.jpg']),
+        'user_id'=> $faker->unique()->numberBetween(1, App\User::count()),
+>>>>>>> Finale Update done
+=======
+        'profilePicture' => $faker->randomElement(['user1-128x128.jpg','user3-128x128.jpg','user4-128x128.jpg','user5-128x128.jpg','user6-128x128.jpg','user7-128x128.jpg','user8-128x128.jpg']),
+        'user_id'=> $faker->unique()->numberBetween(1, App\User::count()),
+>>>>>>> Final Update done
+=======
+        'profilePicture' => $faker->randomElement(['user1-128x128.jpg','user3-128x128.jpg','user4-128x128.jpg','user5-128x128.jpg','user6-128x128.jpg','user7-128x128.jpg','user8-128x128.jpg']),
+        'user_id'=> $faker->unique()->numberBetween(1, App\User::count()),
+>>>>>>> gui
         'created_at' => Carbon::now(),
         'updated_at' => Carbon::now(),
 
     ];
 });
 $factory->define(App\Category::class, function (Faker $faker) {
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
 =======
 
   $vendors = App\Vendor::pluck('id')->toArray();
 >>>>>>> Stashed changes
+=======
+
+  $vendors = App\Vendor::pluck('id')->toArray();
+>>>>>>> Finale Update done
+=======
+
+  $vendors = App\Vendor::pluck('id')->toArray();
+>>>>>>> Final Update done
+=======
+
+  $vendors = App\Vendor::pluck('id')->toArray();
+>>>>>>> gui
     return [
         'clothingSet' => $faker->numberBetween(0, 1),
         'footwearSet' => $faker->numberBetween(0, 1),
         'electronicSet' => $faker->numberBetween(0, 1),
         'hotelSet' => $faker->numberBetween(0, 1),
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
         'vendor_id'=> $faker->numberBetween($min = 1, $max = 20),
 =======
         'vendor_id'=> $faker->randomElement($vendors),
 >>>>>>> Stashed changes
+=======
+        'vendor_id'=> $faker->randomElement($vendors),
+>>>>>>> Finale Update done
+=======
+        'vendor_id'=> $faker->randomElement($vendors),
+>>>>>>> Final Update done
+=======
+        'vendor_id'=> $faker->randomElement($vendors),
+>>>>>>> gui
         'created_at' => Carbon::now(),
         'updated_at' => Carbon::now(),
       ];
 });
 
 $factory->define(App\Offer::class, function (Faker $faker) {
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
 =======
   $vendors = App\Vendor::pluck('id')->toArray();
 >>>>>>> Stashed changes
+=======
+  $vendors = App\Vendor::pluck('id')->toArray();
+>>>>>>> Finale Update done
+=======
+  $vendors = App\Vendor::pluck('id')->toArray();
+>>>>>>> Final Update done
+=======
+  $vendors = App\Vendor::pluck('id')->toArray();
+>>>>>>> gui
     return [
         'offerName' => $faker->randomElement(['Buy 1 Get 1 Free','50% OFF', 'Flat 2000 Discount']),
         'offerPic' => $faker->randomElement(['offer1.jpg','offer3.jpg','offer4.jpg','offer6.jpg','offer7.jpg']),
@@ -126,11 +204,23 @@ $factory->define(App\Offer::class, function (Faker $faker) {
         'offerRating' => $faker->numberBetween(1,5),
         'offerLabel' => $faker->sentence(1),
         'category' => $faker->randomElement(['clothing','footwear','electronic','hotel']),
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
         'vendor_id' => $faker->numberBetween($min = 1, $max = 20),
 =======
         'vendor_id' => $faker->randomElement($vendors),
 >>>>>>> Stashed changes
+=======
+        'vendor_id' => $faker->randomElement($vendors),
+>>>>>>> Finale Update done
+=======
+        'vendor_id' => $faker->randomElement($vendors),
+>>>>>>> Final Update done
+=======
+        'vendor_id' => $faker->randomElement($vendors),
+>>>>>>> gui
         'created_at' => Carbon::now(),
         'updated_at' => Carbon::now(),
 
@@ -138,19 +228,45 @@ $factory->define(App\Offer::class, function (Faker $faker) {
 });
 
 $factory->define(App\Bookmark::class, function (Faker $faker) {
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
   return [
         'customer_id' => $faker->randomDigit,
         'offer_id' => $faker->numberBetween($min = 1, $max = 20),     // 77.147489
         'created_at' => Carbon::now(),
         'updated_at' => Carbon::now(),
+=======
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
+  $offers = App\Offer::pluck('id')->toArray();
+  $customers = App\Customer::pluck('id')->toArray();
+    return [
+          'customer_id' => $faker->randomElement($customers),
+          'offer_id' => $faker->randomElement($offers),     // 77.147489
+          'created_at' => Carbon::now(),
+          'updated_at' => Carbon::now(),
+<<<<<<< HEAD
+<<<<<<< master
+>>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
 
-    ];
+      ];
 });
 
 $factory->define(App\Category_has_offer::class, function (Faker $faker) {
-
+  $offers = App\Offer::pluck('id')->toArray();
+  $categories = App\Category::pluck('id')->toArray();
     return [
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
       'category_id' => $faker->randomDigit,
       'offer_id' => $faker->numberBetween($min = 1, $max = 20),     // 77.147489
 =======
@@ -172,6 +288,18 @@ $factory->define(App\Category_has_offer::class, function (Faker $faker) {
       'category_id' => $faker->randomElement($categories),
       'offer_id' => $faker->randomElement($offers),      // 77.147489
 >>>>>>> Stashed changes
+=======
+      'category_id' => $faker->randomElement($categories),
+      'offer_id' => $faker->randomElement($offers),      // 77.147489
+>>>>>>> Finale Update done
+=======
+      'category_id' => $faker->randomElement($categories),
+      'offer_id' => $faker->randomElement($offers),      // 77.147489
+>>>>>>> Final Update done
+=======
+      'category_id' => $faker->randomElement($categories),
+      'offer_id' => $faker->randomElement($offers),      // 77.147489
+>>>>>>> gui
       'created_at' => Carbon::now(),
       'updated_at' => Carbon::now(),
 

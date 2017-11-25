@@ -80,13 +80,59 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="page-content-inner">
                             <div class="row">
                                 <div class="col-md-12">
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
                                     <form class="form-horizontal form-row-seperated" method="post" action="{{route('storeEdit')}}">
+=======
+                                  @if(isset($msg))
+                                  <div class="note note-danger">
+                                      <p>{{$msg}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('offername'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('offername')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('offer_description'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('offer_description')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('offer_expire'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('offer_expire')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('offerimages'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('offerimages')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('category'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('category')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('label'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('label')}}</p>
+                                  </div>
+                                  @endif
+
+                                    <form class="form-horizontal form-row-seperated" method="post" action="{{route('storeNew')}}">
+>>>>>>> Finale Update done
                                           {{csrf_field()}}
 =======
 <<<<<<< refs/remotes/origin/master
                                     <form class="form-horizontal form-row-seperated" action="#">
 =======
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
                                   @if(isset($msg))
                                   <div class="note note-danger">
                                       <p>{{$msg}}</p>
@@ -139,6 +185,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <button class="btn btn-success">
 <<<<<<< Updated upstream
                                                         <i class="fa fa-check"></i> Save</button> -->
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 =======
 <<<<<<< refs/remotes/origin/master
                                                         <i class="fa fa-check"></i> Save</button>
@@ -169,6 +218,21 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
 
 >>>>>>> Final Update done
+=======
+                                                    <!-- <button class="btn btn-success" type="submit">
+                                                        <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
+
+>>>>>>> Finale Update done
+=======
+                                                    <!-- <button class="btn btn-success" type="submit">
+                                                        <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
+
+>>>>>>> Final Update done
+=======
+                                                    <!-- <button class="btn btn-success" type="submit">
+                                                        <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
+
+>>>>>>> gui
                                                 </div>
                                             </div>
                                             <div class="portlet-body">
@@ -189,6 +253,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                         <span class="required"> * </span>
                                                                     </label>
                                                                     <div class="col-md-10">
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
                                                                         <select class="table-group-action-input form-control input-medium" name="offername">
 =======
@@ -200,11 +267,26 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                             <option value="50% off">50% off</option>
                                                                             <option value="1000 CashBack on 6000 and above Purchase">1000 CashBack on 6000 and above Purchase</option>
 =======
+=======
+>>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
                                                                         <select class="table-group-action-input form-control input-medium" id="offername" name="offername" required>
                                                                             <option value="1">Buy 1 get 1 Free</option>
                                                                             <option value="2">50% off</option>
                                                                             <option value="3">1000 CashBack on 6000 and above Purchase</option>
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 >>>>>>> Final Update done
+=======
+>>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -279,6 +361,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                         <span class="required"> * </span>
                                                                     </label>
                                                                     <div class="col-md-10">
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< refs/remotes/origin/master
                                                                         <div class="form-control height-auto">
                                                                             <div class="scroller" style="height:275px;" data-always-visible="1">
@@ -304,6 +389,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                         </div>
                                                                         <span class="help-block"> select one or more categories </span>
 =======
+=======
+>>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
                                                                         <select class="table-group-action-input form-control input-medium" name="category">
                                                                           <option value="footwear">Footwear</option>
                                                                           <option value="hotels">Hotels</option>
@@ -311,7 +402,16 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                           <option value="clothing">Clothing</option>
 
                                                                         </select>
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 >>>>>>> Final Update done
+=======
+>>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
@@ -320,6 +420,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     </label>
                                                                     <div class="col-md-10">
                                                                         <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
                                                                             <input type="text" class="form-control" name="offer_expire">
 =======
@@ -329,6 +432,15 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                             <input type="text" class="form-control" name="offer_expire" required>
 >>>>>>> Final Update done
 >>>>>>> Stashed changes
+=======
+                                                                            <input type="text" class="form-control" name="offer_expire" required>
+>>>>>>> Finale Update done
+=======
+                                                                            <input type="text" class="form-control" name="offer_expire" required>
+>>>>>>> Final Update done
+=======
+                                                                            <input type="text" class="form-control" name="offer_expire" required>
+>>>>>>> gui
 
                                                                         <span class="help-block"> availability date. </span>
                                                                     </div>
@@ -340,6 +452,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         </div>
 
                                                         <div class="tab-pane" id="tab_images">
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< refs/remotes/origin/master
                                                             <!-- <div class="alert alert-success margin-bottom-10">
                                                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
@@ -392,6 +507,18 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <div class="row">
 
 >>>>>>> Stashed changes
+=======
+                                                            <div class="row">
+
+>>>>>>> Finale Update done
+=======
+                                                            <div class="row">
+
+>>>>>>> Final Update done
+=======
+                                                            <div class="row">
+
+>>>>>>> gui
                                                                 <table class="table table-bordered table-hover">
                                                                     <thead>
                                                                         <tr role="row" class="heading">
@@ -485,6 +612,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 </table>
                                                             </div>
 
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
 =======
 <<<<<<< refs/remotes/origin/master
@@ -492,6 +622,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 </tbody>
                                                             </table>
 =======
+=======
+>>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
                                                             <div>
                                                               <a href="#tab_general" class="btn btn-success" data-toggle="tab"> Back </a>
                                                               <!-- <button type="button" name="back" class="btn btn-secondary-outline">
@@ -503,8 +639,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                                               <!-- <button class="btn btn-success" type="submit">
                                                                   <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
                                                             </div>
+<<<<<<< HEAD
+<<<<<<< master
+<<<<<<< master
 >>>>>>> Final Update done
 >>>>>>> Stashed changes
+=======
+>>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
+=======
+>>>>>>> gui
                                                         </div>
                                                     </div>
                                                 </div>
