@@ -80,7 +80,43 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="page-content-inner">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form class="form-horizontal form-row-seperated" method="post" action="{{route('storeEdit')}}">
+                                  @if(isset($msg))
+                                  <div class="note note-danger">
+                                      <p>{{$msg}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('offername'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('offername')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('offer_description'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('offer_description')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('offer_expire'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('offer_expire')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('offerimages'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('offerimages')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('category'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('category')}}</p>
+                                  </div>
+                                  @endif
+                                  @if($errors->has('label'))
+                                  <div class="note note-danger">
+                                      <p>{{$errors->first('label')}}</p>
+                                  </div>
+                                  @endif
+
+                                    <form class="form-horizontal form-row-seperated" method="post" action="{{route('storeNew')}}">
                                           {{csrf_field()}}
                                         <div class="portlet">
                                             <div class="portlet-title">
@@ -93,26 +129,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <i class="fa fa-reply"></i> Reset</button>
                                                     <button class="btn btn-success">
                                                         <i class="fa fa-check"></i> Save</button> -->
-                                                    <button class="btn btn-success">
-                                                        <i class="fa fa-check-circle"></i> Save & Continue Edit</button>
-                                                    <div class="btn-group">
-                                                        <a class="btn btn-success dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-                                                            <i class="fa fa-share"></i> More
-                                                            <i class="fa fa-angle-down"></i>
-                                                        </a>
-                                                        <div class="dropdown-menu pull-right">
-                                                            <li>
-                                                                <a href="javascript:;"> Duplicate </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:;"> Delete </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"> </li>
-                                                            <li>
-                                                                <a href="javascript:;"> Print </a>
-                                                            </li>
-                                                        </div>
-                                                    </div>
+                                                    <!-- <button class="btn btn-success" type="submit">
+                                                        <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
+
                                                 </div>
                                             </div>
                                             <div class="portlet-body">
@@ -133,12 +152,68 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                         <span class="required"> * </span>
                                                                     </label>
                                                                     <div class="col-md-10">
-                                                                        <select class="table-group-action-input form-control input-medium" name="offername">
-                                                                            <option value="">Select...</option>
-                                                                            <option value="Buy 1 get 1 Free">Buy 1 get 1 Free</option>
-                                                                            <option value="50% off">50% off</option>
-                                                                            <option value="1000 CashBack on 6000 and above Purchase">1000 CashBack on 6000 and above Purchase</option>
+                                                                        <select class="table-group-action-input form-control input-medium" id="offername" name="offername" required>
+                                                                            <option value="1">Buy 1 get 1 Free</option>
+                                                                            <option value="2">50% off</option>
+                                                                            <option value="3">1000 CashBack on 6000 and above Purchase</option>
                                                                         </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group" id="buyget">
+                                                                  <label class="col-md-2 control-label">Buy
+                                                                      <span class="required"> * </span>
+                                                                  </label>
+                                                                  <div class="col-md-10">
+                                                                      <select class="table-group-action-input form-control input-medium" id="buy" name="buy">
+                                                                          <option value="1">1</option>
+                                                                          <option value="2">2</option>
+                                                                          <option value="3">3</option>
+                                                                          <option value="4">4</option>
+                                                                          <option value="5">5</option>
+                                                                          <option value="6">6</option>
+                                                                          <option value="7">7</option>
+                                                                          <option value="8">8</option>
+                                                                          <option value="9">9</option>
+                                                                      </select>
+                                                                  </div>
+
+                                                                  <label class="col-md-2 control-label">Get
+                                                                      <span class="required"> * </span>
+                                                                  </label>
+                                                                  <div class="col-md-10">
+                                                                      <select class="table-group-action-input form-control input-medium" id="get" name="get">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                        <option value="8">8</option>
+                                                                        <option value="9">9</option>
+                                                                      </select>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="form-group " style="display:none" id="flat">
+                                                                    <label class="col-md-2 control-label">Flat:
+                                                                        <span class="required"> * </span>
+                                                                    </label>
+                                                                    <div class="col-md-1">
+                                                                        <input type="number" class="form-control" name="flat"></input >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group " style="display:none"  id="cashback">
+                                                                    <label class="col-md-2 control-label">Cashback:
+                                                                        <span class="required"> * </span>
+                                                                    </label>
+                                                                    <div class="col-md-1">
+                                                                        <input type="number" class="form-control" name="cashback"></input >
+                                                                    </div>
+                                                                    <label class="col-md-2 control-label">Purchase:
+                                                                        <span class="required"> * </span>
+                                                                    </label>
+                                                                    <div class="col-md-1">
+                                                                        <input type="number" class="form-control" name="purchase"></input >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
@@ -146,7 +221,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                         <span class="required"> * </span>
                                                                     </label>
                                                                     <div class="col-md-10">
-                                                                        <textarea class="form-control" name="offer_description"></textarea>
+                                                                        <textarea class="form-control" name="offer_description" required></textarea>
                                                                     </div>
                                                                 </div>
 
@@ -155,29 +230,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                         <span class="required"> * </span>
                                                                     </label>
                                                                     <div class="col-md-10">
-                                                                        <div class="form-control height-auto">
-                                                                            <div class="scroller" style="height:275px;" data-always-visible="1">
-                                                                                <ul class="list-unstyled">
-                                                                                    <li>
-                                                                                      <label>
-                                                                                          <input type="checkbox" name="offer[categories][]" value="footwear">Footwear</label>
-                                                                                  </li>
-                                                                                  <li>
-                                                                                      <label>
-                                                                                          <input type="checkbox" name="offer[categories][]" value="clothing">Clothing</label>
-                                                                                  </li>
-                                                                                  <li>
-                                                                                      <label>
-                                                                                          <input type="checkbox" name="offer[categories][]" value="electronic">Electronic</label>
-                                                                                  </li>
-                                                                                  <li>
-                                                                                      <label>
-                                                                                          <input type="checkbox" name="offer[categories][]" value="hotel">Hotel</label>
-                                                                                  </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="help-block"> select one or more categories </span>
+                                                                        <select class="table-group-action-input form-control input-medium" name="category">
+                                                                          <option value="footwear">Footwear</option>
+                                                                          <option value="hotels">Hotels</option>
+                                                                          <option value="electronics">Electronics</option>
+                                                                          <option value="clothing">Clothing</option>
+
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
@@ -186,26 +245,20 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     </label>
                                                                     <div class="col-md-10">
                                                                         <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
-                                                                            <input type="text" class="form-control" name="offer_expire">
+                                                                            <input type="text" class="form-control" name="offer_expire" required>
 
                                                                         <span class="help-block"> availability date. </span>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div>
+                                                              <a href="#tab_images" class="btn btn-success" data-toggle="tab"> Next </a>
+                                                            </div>
                                                         </div>
 
                                                         <div class="tab-pane" id="tab_images">
-                                                            <!-- <div class="alert alert-success margin-bottom-10">
-                                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                                                                <i class="fa fa-warning fa-lg"></i> Image type and information need to be specified. </div> -->
-                                                            <div id="tab_images_uploader_container" class="text-align-reverse margin-bottom-10">
-                                                                <a id="tab_images_uploader_pickfiles" href="javascript:;" class="btn btn-success">
-                                                                    <i class="fa fa-plus"></i> Select Files </a>
-                                                                <a id="tab_images_uploader_uploadfiles" href="javascript:;" class="btn btn-primary">
-                                                                    <i class="fa fa-share"></i> Upload Files </a>
-                                                            </div>
                                                             <div class="row">
-                                                                <div id="tab_images_uploader_filelist" class="col-md-6 col-sm-12"></div>
+
                                                                 <table class="table table-bordered table-hover">
                                                                     <thead>
                                                                         <tr role="row" class="heading">
@@ -282,6 +335,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 </table>
                                                             </div>
 
+                                                            <div>
+                                                              <a href="#tab_general" class="btn btn-success" data-toggle="tab"> Back </a>
+                                                              <!-- <button type="button" name="back" class="btn btn-secondary-outline">
+                                                                  <i class="fa fa-angle-left"></i> Back</button>
+                                                              <button class="btn btn-secondary-outline">
+                                                                  <i class="fa fa-reply"></i> Reset</button> -->
+                                                              <button class="btn btn-success">
+                                                                  <i class="fa fa-check"></i> Save</button>
+                                                              <!-- <button class="btn btn-success" type="submit">
+                                                                  <i class="fa fa-check-circle"></i> Save & Continue Edit</button> -->
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -343,5 +407,29 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
     </body>
+
+    <script>
+$(document).ready(function(){
+  $("#offername").on("change", function(){
+    $offername = $("#offername").val();
+      if ($offername == 1) {
+        $("#buyget").show();
+        $("#flat").hide();
+        $("#cashback").hide();
+      }
+      if($offername == 2) {
+        $("#buyget").hide();
+        $("#flat").show();
+        $("#cashback").hide();
+      }
+      if ($offername == 3) {
+        $("#buyget").hide();
+        $("#flat").hide();
+        $("#cashback").show();
+      }
+
+  });
+});
+</script>
 
 </html>

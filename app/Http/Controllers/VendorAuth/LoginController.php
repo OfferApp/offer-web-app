@@ -5,6 +5,7 @@ namespace App\Http\Controllers\VendorAuth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
 
 //Auth facade
 use Auth;
@@ -30,10 +31,11 @@ class LoginController extends Controller
        return view('auth.login');
    }
 
-   public function verified($id)
+   public function verified(Request $request)
    {
-     $user = User::where('id',$id)->first();
-     $user->verified = '1';
+     $user = User::where('id',$request['id'])->first();
+     $user->verified = 'true';
+     $user->save();
      return view('emails.afterVerified');
    }
 

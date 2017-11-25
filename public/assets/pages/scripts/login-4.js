@@ -6,7 +6,7 @@ var Login = function () {
 	            errorClass: 'help-block', // default input error message class
 	            focusInvalid: false, // do not focus the last invalid input
 	            rules: {
-	                username: {
+	               email: {
 	                    required: true
 	                },
 	                password: {
@@ -18,15 +18,15 @@ var Login = function () {
 	            },
 
 	            messages: {
-	                username: {
-	                    required: "Username is required."
+	                email: {
+	                    required: "Email is required."
 	                },
 	                password: {
 	                    required: "Password is required."
 	                }
 	            },
 
-	            invalidHandler: function (event, validator) { //display error alert on form submit   
+	            invalidHandler: function (event, validator) { //display error alert on form submit
 	                $('.alert-danger', $('.login-form')).show();
 	            },
 
@@ -78,7 +78,7 @@ var Login = function () {
 	                }
 	            },
 
-	            invalidHandler: function (event, validator) { //display error alert on form submit   
+	            invalidHandler: function (event, validator) { //display error alert on form submit
 
 	            },
 
@@ -129,7 +129,7 @@ var Login = function () {
             var $state = $(
              '<span><img src="../assets/global/img/flags/' + state.element.value.toLowerCase() + '.png" class="img-flag" /> ' + state.text + '</span>'
             );
-            
+
             return $state;
         }
 
@@ -138,7 +138,7 @@ var Login = function () {
 	            placeholder: '<i class="fa fa-map-marker"></i>&nbsp;Select a Country',
 	            templateResult: format,
                 templateSelection: format,
-                width: 'auto', 
+                width: 'auto',
 	            escapeMarkup: function(m) {
 	                return m;
 	            }
@@ -157,31 +157,40 @@ var Login = function () {
 	            focusInvalid: false, // do not focus the last invalid input
 	            ignore: "",
 	            rules: {
-	                
-	                fullname: {
-	                    required: true
+
+	                name: {
+	                    required: true,
+											name:true
 	                },
 	                email: {
 	                    required: true,
 	                    email: true
 	                },
+									shopName: {
+	                    required: true,
+	                    shopName: true
+	                },
 	                address: {
 	                    required: true
 	                },
-	                city: {
+	                zipcode: {
 	                    required: true
 	                },
-	                country: {
+	                website: {
 	                    required: true
 	                },
 
 	                username: {
 	                    required: true
 	                },
+									mobile_no: {
+	                    required: true
+	                },
 	                password: {
 	                    required: true
 	                },
 	                rpassword: {
+											required: true,
 	                    equalTo: "#register_password"
 	                },
 
@@ -196,7 +205,7 @@ var Login = function () {
 	                }
 	            },
 
-	            invalidHandler: function (event, validator) { //display error alert on form submit   
+	            invalidHandler: function (event, validator) { //display error alert on form submit
 
 	            },
 
@@ -211,7 +220,7 @@ var Login = function () {
 	            },
 
 	            errorPlacement: function (error, element) {
-	                if (element.attr("name") == "tnc") { // insert checkbox errors after the container                  
+	                if (element.attr("name") == "tnc") { // insert checkbox errors after the container
 	                    error.insertAfter($('#register_tnc_error'));
 	                } else if (element.closest('.input-icon').size() === 1) {
 	                    error.insertAfter(element.closest('.input-icon'));
@@ -244,14 +253,14 @@ var Login = function () {
 	            jQuery('.register-form').hide();
 	        });
 	}
-    
+
     return {
         //main function to initiate the module
         init: function () {
-        	
+
             handleLogin();
             handleForgetPassword();
-            handleRegister();    
+            handleRegister();
 
             // init background slide images
 		    $.backstretch([

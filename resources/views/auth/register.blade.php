@@ -61,7 +61,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN LOGO -->
         <div class="logo">
             <a href="index.html">
-                <img src="../assets/pages/img/logo1.png"  height="35%" width="35%"alt="" /> </a>
+                <img src="../assets/pages/img/login/logo1.png"  alt="App Logo" /> </a>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->
@@ -71,6 +71,22 @@ License: You must have a valid license purchased only from themeforest(the above
               {{ csrf_field() }}
                 <h3>Sign Up</h3>
                 <p> Enter your personal details below: </p>
+
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}" id="name">
+                    <label class="control-label visible-ie8 visible-ie9">User Type</label>
+                    <div >
+                        <i class="fa fa-users"></i>
+                        <input type="radio" name="type" id="type1" value="vendor" checked> Vendor   &nbsp;</input>
+                        <i class="fa fa-user"></i>
+                        <input type="radio" name="type" id="type2" value="customer" > Customer </input>
+
+                        @if ($errors->has('name'))
+                          <span class="help-block alert-danger">
+                            <strong>{{ $errors->first('name') }}</strong>
+                          </span>
+                        @endif
+                      </div>
+                </div>
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}" id="name">
                     <label class="control-label visible-ie8 visible-ie9">Full Name</label>
@@ -97,6 +113,55 @@ License: You must have a valid license purchased only from themeforest(the above
                           </span>
                         @endif
                       </div>
+                </div>
+                <div class="vendorInfo">
+                  <p> Enter the vendor details below:</p>
+
+                  <div class="form-group{{ $errors->has('shopName') ? ' has-error' : '' }}" id="shopName">
+                      <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                          <input class="form-control placeholder-no-fix" type="text" placeholder="Shop Name" name="shopName"  />
+                          @if ($errors->has('shopName'))
+                            <span class="help-block alert-danger">
+                              <strong>{{ $errors->first('shopName') }}</strong>
+                            </span>
+                          @endif
+                      </div>
+                  </div>
+
+                  <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}" id="address">
+                      <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                          <input class="form-control placeholder-no-fix" type="text" placeholder="Shop Address" name="address" />
+                          @if ($errors->has('address'))
+                            <span class="help-block alert-danger">
+                              <strong>{{ $errors->first('address') }}</strong>
+                            </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}" id="zipcode">
+                      <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                          <input class="form-control placeholder-no-fix" type="text" placeholder="Zip Code" name="zipcode"  />
+                          @if ($errors->has('zipcode'))
+                            <span class="help-block alert-danger">
+                              <strong>{{ $errors->first('zipcode') }}</strong>
+                            </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}" id="website">
+                      <div class="input-icon">
+                        <i class="fa fa-globe"></i>
+                          <input class="form-control placeholder-no-fix" type="text" placeholder="http://www.mywebsite.com" name="website"  />
+                          @if ($errors->has('website'))
+                            <span class="help-block alert-danger">
+                              <strong>{{ $errors->first('website') }}</strong>
+                            </span>
+                          @endif
+                      </div>
+                  </div>
                 </div>
 
                 <p> Enter your account details below: </p>
@@ -164,7 +229,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div id="register_tnc_error"> </div>
                 </div> -->
                 <div class="form-actions">
-                    <button id="register-back-btn" type="button" class="btn red btn-outline"> Back </button>
+                    <a href="{{route('login')}}" class="btn red btn-outline"> Back </a>
                     <button type="submit" id="register-submit-btn" class="btn green pull-right"> Sign Up </button>
                 </div>
             </form>
@@ -178,6 +243,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="../assets/global/plugins/respond.min.js"></script>
 <script src="../assets/global/plugins/excanvas.min.js"></script>
 <![endif]-->
+
+
         <!-- BEGIN CORE PLUGINS -->
         <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
         <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -197,10 +264,26 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="../assets/pages/scripts/login-4.min.js" type="text/javascript"></script>
+        <script src="../assets/pages/scripts/login-4.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <!-- END THEME LAYOUT SCRIPTS -->
     </body>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+    $('input:radio').on("change",
+    function(){
+        if ($('input:radio[name="type"]:checked').val() == "vendor") {
+          $(".vendorInfo").show();
+        }
+        else if ($('input:radio[name="type"]:checked').val() == "customer"){
+          $(".vendorInfo").hide();
+        }
+    });
+
+    });
+    </script>
 
 </html>
