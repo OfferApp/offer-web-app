@@ -78,6 +78,7 @@ public function showRegistrationForm()
     protected function create(array $data)
     {
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
         $user = User::create([
 =======
@@ -88,6 +89,8 @@ public function showRegistrationForm()
 =======
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
         $type = $data['type'];
         if ($type == 'vendor') {
           $role_id = '1';
@@ -98,9 +101,12 @@ public function showRegistrationForm()
         }
         $user =  User::create([
 <<<<<<< master
+<<<<<<< master
 >>>>>>> Final Update done
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
             'username' => $data['username'],
             'email' => $data['email'],
             'mobile' => $data['mobile_no'],

@@ -94,6 +94,7 @@ return [
     |
     */
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
     'locate' => false,
 =======
@@ -102,6 +103,9 @@ return [
 =======
     'locate' => true,
 >>>>>>> Finale Update done
+=======
+    'locate' => true,
+>>>>>>> Final Update done
 
     /*
     |--------------------------------------------------------------------------
@@ -112,6 +116,7 @@ return [
     |
     */
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
     'zoom' => 13,
 =======
@@ -120,6 +125,9 @@ return [
 =======
     'zoom' => 18,
 >>>>>>> Finale Update done
+=======
+    'zoom' => 18,
+>>>>>>> Final Update done
 
     /*
     |--------------------------------------------------------------------------
@@ -240,6 +248,7 @@ return [
         |
         */
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
         'animation' => 'NONE',
 =======
@@ -248,6 +257,9 @@ return [
 =======
         'animation' => 'DROP',
 >>>>>>> Finale Update done
+=======
+        'animation' => 'DROP',
+>>>>>>> Final Update done
 
     ],
 

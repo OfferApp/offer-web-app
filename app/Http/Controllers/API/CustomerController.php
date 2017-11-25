@@ -10,6 +10,7 @@ use App\User;
 <<<<<<< Updated upstream
 use App\Customer;
 <<<<<<< master
+<<<<<<< master
 =======
 <<<<<<< refs/remotes/origin/master
 =======
@@ -20,6 +21,9 @@ use App\Bookmark;
 =======
 use App\Bookmark;
 >>>>>>> Finale Update done
+=======
+use App\Bookmark;
+>>>>>>> Final Update done
 use Auth;
 use DB;
 
@@ -41,6 +45,7 @@ class CustomerController extends Controller
             $user = Auth::user();
             $verified = Auth::user()->verified;
 <<<<<<< master
+<<<<<<< master
 <<<<<<< refs/remotes/origin/master
             if($verified == 1){
               $success['token'] =  $user->createToken('OfferApp')->accessToken;
@@ -48,15 +53,20 @@ class CustomerController extends Controller
 =======
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
             if($verified == true){
               $token =  $user->createToken('OfferApp')->accessToken;
               return response()->json(['token' => $token,
                                        'StatusCode' => $this->successStatus],
                                         $this->successStatus);
 <<<<<<< master
+<<<<<<< master
 >>>>>>> Final Update done
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
             }
             return response()->json(['error'=>'Unverified Account',
                                      'StatusCode' => 406]);
@@ -166,6 +176,7 @@ class CustomerController extends Controller
 
         $validator = Validator::make($request->all(), [
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
           'fullname' => 'required|max:255',
 =======
@@ -180,15 +191,20 @@ class CustomerController extends Controller
 =======
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
           'id' => 'required',
           'name' => 'required|',
           'username' => 'required|max:255|unique:users,username,'.$request->id,
           'mobile' => 'required|regex:/[0-9]/|unique:users,mobile,'.$request->id,
           'email' => 'required|email|max:255|unique:users,email,'.$request->id,
 <<<<<<< master
+<<<<<<< master
 >>>>>>> Final Update done
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
         ]);
 
         if ($validator->fails()) {
@@ -211,6 +227,7 @@ class CustomerController extends Controller
 
         $input = $request->all();
 <<<<<<< master
+<<<<<<< master
 <<<<<<< refs/remotes/origin/master
         $user = User::create([
             'username' => $input['username'],
@@ -230,15 +247,20 @@ class CustomerController extends Controller
 =======
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
         $user = User::where('id',$input['id'])->first();
         $user->username = $input['username'];
         $user->email = $input['email'];
         $user->mobile = $input['mobile'];
         $user->save();
 <<<<<<< master
+<<<<<<< master
 >>>>>>> Final Update done
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
 
         $customer = Customer::where('user_id',$input['id'])->first();
         $customer->fullName = $input['name'];

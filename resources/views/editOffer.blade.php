@@ -102,6 +102,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                     @endif
                                     @if($errors->has('offerimages'))
+<<<<<<< master
                                     <div class="note note-danger">
                                         <p>{{$errors->first('offerimages')}}</p>
                                     </div>
@@ -116,6 +117,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <p>{{$errors->first('label')}}</p>
                                     </div>
                                     @endif
+=======
+                                    <div class="note note-danger">
+                                        <p>{{$errors->first('offerimages')}}</p>
+                                    </div>
+                                    @endif
+                                    @if($errors->has('category'))
+                                    <div class="note note-danger">
+                                        <p>{{$errors->first('category')}}</p>
+                                    </div>
+                                    @endif
+                                    @if($errors->has('label'))
+                                    <div class="note note-danger">
+                                        <p>{{$errors->first('label')}}</p>
+                                    </div>
+                                    @endif
+>>>>>>> Final Update done
 
 
                                     <!-- Begin: life time stats -->
@@ -132,6 +149,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <button class="btn btn-sm btn-success table-group-action-submit">
                                                         <i class="fa fa-check"></i> Submit</button>
                                                 </div>
+<<<<<<< master
 <<<<<<< master
 <<<<<<< refs/remotes/origin/master
                                                 <table class="table table-striped table-bordered table-hover table-checkable" id="datatable_products">
@@ -155,6 +173,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                                 <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
 >>>>>>> Finale Update done
+=======
+                                                <form  class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data" action="{{route('storeNew')}}">
+>>>>>>> Final Update done
                                                             {{csrf_field()}}
                                                   <div class="portlet light portlet-fit ">
                                                       <div class="portlet-title">
@@ -169,6 +190,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                   <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
                                                                       <input type="radio" name="options" class="toggle" id="option2">Settings</label>
                                                               </div>
+<<<<<<< master
 <<<<<<< master
                                                                 <td>
                                                                     <input type="text" class="form-control form-filter input-sm" name="product_description"> </td>
@@ -211,6 +233,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                               </div>
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
                                                           </div>
                                                       </div>
                                                       <div class="portlet-body">
@@ -285,9 +309,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                   </div>
                                                 </form>
 <<<<<<< master
+<<<<<<< master
 >>>>>>> Final Update done
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
                                             </div>
                                         </div>
                                     <!-- End: life time stats -->

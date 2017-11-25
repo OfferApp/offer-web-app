@@ -5,6 +5,7 @@ namespace App\Http\Controllers\VendorAccount;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
 =======
 <<<<<<< refs/remotes/origin/master
@@ -14,6 +15,9 @@ use App\Http\Requests\vendorProfile;
 =======
 use App\Http\Requests\vendorProfile;
 >>>>>>> Finale Update done
+=======
+use App\Http\Requests\vendorProfile;
+>>>>>>> Final Update done
 use Mapper;
 use App\Vendor;
 use Response;
@@ -32,11 +36,15 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
     public function setPersonalInfo(Request $request)
 =======
     public function PersonalInfo()
 >>>>>>> Finale Update done
+=======
+    public function PersonalInfo()
+>>>>>>> Final Update done
     {
         return view('vendorPersonalInfo');
     }
@@ -63,6 +71,7 @@ class AccountController extends Controller
         Mapper::location($address)
         ->map(['zoom' => 15, 'center' => true, 'marker' => true, 'type' => 'HYBRID', 'overlay' => 'TRAFFIC']);
         return view('vendorLocation',compact('map'));
+<<<<<<< master
     }
 
     public function setPersonalInfo(vendorProfile $request)
@@ -181,6 +190,30 @@ class AccountController extends Controller
 
     public function setAvatar(vendorProfile $request)
     {
+=======
+    }
+
+    public function setPersonalInfo(vendorProfile $request)
+    {
+
+        $vendor = Vendor::where('user_id',Auth::guard('web_vendor')->user()->id)->first();
+        $vendor->fullName = $request['firstName'];
+        $vendor->shopName = $request['shopName'];
+        $vendor->shopAddress = $request['address'];
+        $vendor->shopContactNo = $request['mobileNo'];
+        $vendor->zipCode = $request['zipcode'];
+        $vendor->website = $request['website'];
+        $vendor->xCoordinate = '18.25';
+        $vendor->yCoordinate = '75.23';
+        $vendor->user_id = Auth::guard('web_vendor')->user()->id;
+        $vendor->save();
+
+        return view('vendorPersonalInfo');
+    }
+
+    public function setAvatar(vendorProfile $request)
+    {
+>>>>>>> Final Update done
       $file = $request->file('avatar');
       $destinationPath = 'assets/pages/media/works/';
       $file->move($destinationPath,$file->getClientOriginalName());
@@ -243,6 +276,7 @@ class AccountController extends Controller
     public function create()
     {
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
       // Draw a map
           $vendor = Vendor::all();
@@ -262,6 +296,8 @@ class AccountController extends Controller
 >>>>>>> Stashed changes
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
     }
 
     /**

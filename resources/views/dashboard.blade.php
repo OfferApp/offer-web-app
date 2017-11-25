@@ -67,6 +67,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="page-title">
                             <h1>Vendor
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
                                 <small>Offer Gallery</small>
 =======
@@ -75,6 +76,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                 <small>Gallery</small>
 >>>>>>> Finale Update done
+=======
+                                <small>Gallery</small>
+>>>>>>> Final Update done
                             </h1>
                         </div>
                         <!-- END PAGE TITLE -->
@@ -130,18 +134,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                       <ul class="cbp-l-project-related-wrap">
                                       @foreach ($offers as $offer)
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
 
 =======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
                                           <li class="cbp-l-project-related-item">
                                               <a href="ajax-juicy-projects/project1.html" class="cbp-singlePage cbp-l-project-related-link" rel="nofollow">
                                                   <img src="/assets/pages/media/works/{{$offer->offerPic}}" alt="">
                                                   <div class="cbp-l-project-related-title">{{$offer->offerName}}</div>
                                               </a>
                                           </li>
+<<<<<<< master
 <<<<<<< master
 <<<<<<< Updated upstream
 
@@ -153,6 +161,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                       @endforeach
 >>>>>>> Finale Update done
+=======
+                                      @endforeach
+>>>>>>> Final Update done
                                       </ul>
 
                                   </div>

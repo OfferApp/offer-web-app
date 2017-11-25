@@ -66,6 +66,7 @@ Route::group(['middleware' => 'vendor_auth'], function(){
       Route::get('/dashboard', 'VendorAccount\AccountController@index')
       ->name('dashboard');
 <<<<<<< master
+<<<<<<< master
 =======
 <<<<<<< refs/remotes/origin/master
 >>>>>>> Stashed changes
@@ -73,6 +74,8 @@ Route::group(['middleware' => 'vendor_auth'], function(){
       ->name('setAccount');
       Route::post('/newVendorPersonalInfo', 'VendorAccount\AccountController@setPersonalInfo')
 =======
+=======
+>>>>>>> Final Update done
       // Route::get('/newVendorAccount', 'VendorAccount\AccountController@create')
       // ->name('setAccount');
       Route::get('/VendorPersonalInfo', 'VendorAccount\AccountController@PersonalInfo')
@@ -85,7 +88,10 @@ Route::group(['middleware' => 'vendor_auth'], function(){
       ->name('Location');
 
       Route::post('/VendorPersonalInfo', 'VendorAccount\AccountController@setPersonalInfo')
+<<<<<<< master
 >>>>>>> Finale Update done
+=======
+>>>>>>> Final Update done
       ->name('setPersonalInfo');
       Route::post('/VendorAvatar', 'VendorAccount\AccountController@setAvatar')
       ->name('setAvatar');
@@ -97,12 +103,17 @@ Route::group(['middleware' => 'vendor_auth'], function(){
       Route::get('/newoffer', 'Offer\OfferController@create')->name('setOffer');
       Route::get('/editoffer', 'Offer\OfferController@edit')->name('editOffer');
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
       Route::post('/editoffer', 'Offer\OfferController@store')->name('storeEdit');
 =======
       Route::post('/newoffer', 'Offer\OfferController@store')->name('storeNew');
       Route::post('/editoffer', 'Offer\OfferController@update')->name('storeEdit');
 >>>>>>> Finale Update done
+=======
+      Route::post('/newoffer', 'Offer\OfferController@store')->name('storeNew');
+      Route::post('/editoffer', 'Offer\OfferController@update')->name('storeEdit');
+>>>>>>> Final Update done
       Route::get('/viewoffer', 'Offer\OfferController@index')->name('viewOffer');
 =======
       Route::get('/viewoffer', 'Offer\OfferController@edit')->name('viewOffer');

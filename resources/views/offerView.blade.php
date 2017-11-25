@@ -101,6 +101,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         @if ($offer->category == 'clothing')
 
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
                                         <div class="cbp-item graphic">
 =======
@@ -109,6 +110,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                         <div class="cbp-item identity">
 >>>>>>> Finale Update done
+=======
+                                        <div class="cbp-item identity">
+>>>>>>> Final Update done
                                             <div class="cbp-caption">
                                                 <div class="cbp-caption-defaultWrap">
                                                     <img src="/assets/pages/media/works/{{$offer->offerPic}}" alt=""> </div>
@@ -160,6 +164,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </div>
                                         @elseif ($offer->category == 'electronic')
 <<<<<<< master
+<<<<<<< master
 <<<<<<< Updated upstream
                                         <div class="cbp-item identity">
 =======
@@ -168,6 +173,9 @@ License: You must have a valid license purchased only from themeforest(the above
 =======
                                         <div class="cbp-item graphic">
 >>>>>>> Finale Update done
+=======
+                                        <div class="cbp-item graphic">
+>>>>>>> Final Update done
                                             <div class="cbp-caption">
                                                 <div class="cbp-caption-defaultWrap">
                                                     <img src="/assets/pages/media/works/{{$offer->offerPic}}" alt=""> </div>
