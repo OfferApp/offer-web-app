@@ -58,6 +58,13 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END HEAD -->
 
     <body class=" login">
+      @if(isset($errors))
+          @foreach($errors as $error)
+          <div class="note note-danger">
+              <p>{{$error}}</p>
+          </div>
+          @endforeach
+      @endif
         <!-- BEGIN LOGO -->
         <div class="logo">
             <a href="index.html">
@@ -140,10 +147,10 @@ License: You must have a valid license purchased only from themeforest(the above
                           @endif
                       </div>
                   </div>
-                  <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}" id="zipcode">
+                  <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}" id="zipCode">
                       <div class="input-icon">
                         <i class="fa fa-font"></i>
-                          <input class="form-control placeholder-no-fix" type="text" placeholder="Zip Code" name="zipcode"  />
+                          <input class="form-control placeholder-no-fix" type="text" placeholder="Zip Code" name="zipCode"  />
                           @if ($errors->has('zipcode'))
                             <span class="help-block alert-danger">
                               <strong>{{ $errors->first('zipcode') }}</strong>
